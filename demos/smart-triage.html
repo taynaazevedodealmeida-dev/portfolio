@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/demo.css">
+<style>
+  .wave{ display:flex; align-items:center; gap:3px; height:34px; }
+  .wave i{ width:4px; border-radius:3px; background:var(--accent); height:30%; }
+  .scene.is-active .wave i{ animation:wv 1.1s var(--ease) infinite; }
+  .wave i:nth-child(2n){ animation-delay:.15s } .wave i:nth-child(3n){ animation-delay:.3s } .wave i:nth-child(4n){ animation-delay:.45s }
+  @keyframes wv{ 0%,100%{ height:25% } 50%{ height:95% } }
+  .json{ background:#15141A; color:#E8E3DC; border-radius:12px; padding:14px 16px; font-family:var(--mono); font-size:.8rem; line-height:1.7; }
+  .json .k{ color:#C9B8FF } .json .s{ color:#7FD8A6 }
+</style>
+<body class="demo-body" style="--accent:#8B3FD9;--accent-ink:#642BA0" data-title-pt="Smart Triage — demonstração" data-title-en="Smart Triage — demo">
+
+<div class="dbar">
+  <a class="back" href="../index.html#work">← <span data-pt>Portfólio</span><span data-en>Portfolio</span></a>
+  <div class="who"><span class="dot"></span>Smart Triage <small data-pt>triagem · call center BPO</small><small data-en>triage · BPO call center</small></div>
+  <div class="lang" role="group" aria-label="Language"><button data-lang-btn="pt" class="on">PT</button><button data-lang-btn="en">EN</button></div>
+</div>
+
+<div class="stage-shell">
+  <div class="phases">
+    <span class="phase"><span data-pt>Entrada</span><span data-en>Input</span></span>
+    <span class="phase"><span data-pt>Transcreve</span><span data-en>Transcribe</span></span>
+    <span class="phase"><span data-pt>Classifica + RAG</span><span data-en>Classify + RAG</span></span>
+    <span class="phase"><span data-pt>Ficha</span><span data-en>Brief</span></span>
+  </div>
+  <div class="stage">
+    <div class="splash" id="splash">
+      <div class="splash-in">
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12a8 8 0 0 1 16 0v4a3 3 0 0 1-3 3h-1v-6h4M4 13h4v6H7a3 3 0 0 1-3-3z"/></svg>
+        <p class="tl" data-pt>IA aplicada · BPO</p><p class="tl" data-en>Applied AI · BPO</p>
+        <h1>Smart Triage</h1>
+        <p><span data-pt>Triagem omnichannel: áudio ou texto do cliente vira uma ficha pronta para o atendente humano.</span><span data-en>Omnichannel triage: a customer's audio or text becomes a ready brief for the human agent.</span></p>
+        <div class="splash-cta">
+          <button class="btn btn-accent" data-start><span data-pt>▶ Iniciar demonstração</span><span data-en>▶ Start demo</span></button>
+          <button class="skip" data-skip><span data-pt>pular para o fim</span><span data-en>skip to end</span> ✕</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="scene" data-dur="5400" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>A dor</span><span data-en>The pain</span></p>
+        <h2 class="big" data-in="2"><span data-pt>O atendente começa toda ligação no escuro.</span><span data-en>The agent starts every call in the dark.</span></h2>
+        <p class="say" data-in="3"><span data-pt>Tempo perdido entendendo o problema do zero, cliente impaciente, fila crescendo.</span><span data-en>Time lost figuring out the problem from scratch, impatient customer, growing queue.</span></p>
+      </div>
+      <div class="cap"><span class="av">T</span><span class="txt"><span data-pt>A IA não substitui o atendente — ela faz a triagem.</span><span data-en>The AI doesn't replace the agent — it does the triage.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6000" data-phase="1">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Entrada de áudio (amostra sintética)</span><span data-en>Audio input (synthetic sample)</span></p>
+        <div class="filechip audio" data-in="2" style="width:fit-content"><span class="x">♪</span> audio_cliente.ogg
+          <span class="wave" style="margin-left:8px"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        </div>
+        <div class="bubble bot" data-in="3" style="max-width:90%"><span data-pt>“Oi, minha fatura veio com um valor diferente do combinado e eu já paguei o boleto antigo…”</span><span data-en>“Hi, my invoice came with a different amount than agreed and I already paid the old slip…”</span></div>
+      </div>
+      <div class="cap"><span class="av">T</span><span class="txt"><b><span data-pt>Transcreve.</span><span data-en>Transcribe.</span></b> <span data-pt>Whisper converte voz em texto — texto entra direto.</span><span data-en>Whisper turns voice into text — text comes in directly.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6600" data-phase="2">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Classificação + busca na base (RAG)</span><span data-en>Classification + knowledge search (RAG)</span></p>
+        <div class="think">
+          <div class="step" data-in="2"><span class="n">1</span><span data-pt>Intenção: <b>cobrança / divergência de fatura</b></span><span data-en>Intent: <b>billing / invoice mismatch</b></span></div>
+          <div class="step" data-in="3"><span class="n">2</span><span data-pt>Extrai o problema: valor divergente + pagamento duplicado</span><span data-en>Extracts the problem: amount mismatch + duplicate payment</span></div>
+          <div class="step" data-in="4"><span class="n">3</span><span data-pt>RAG no ChromaDB → procedimento “Reembolso de duplicidade”</span><span data-en>RAG in ChromaDB → procedure “Duplicate refund”</span></div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">T</span><span class="txt"><b><span data-pt>Classifica.</span><span data-en>Classify.</span></b> <span data-pt>LLM local (Ollama) + base vetorial da empresa.</span><span data-en>Local LLM (Ollama) + the company's vector base.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6800" data-phase="3">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Ficha para o atendente</span><span data-en>Brief for the agent</span></p>
+        <div class="json" data-in="2">{<br>&nbsp;&nbsp;<span class="k">"categoria"</span>: <span class="s">"cobrança / fatura"</span>,<br>&nbsp;&nbsp;<span class="k">"problema"</span>: <span class="s">"valor divergente + boleto pago em duplicidade"</span>,<br>&nbsp;&nbsp;<span class="k">"resolucao_sugerida"</span>: <span class="s">"abrir reembolso de duplicidade"</span>,<br>&nbsp;&nbsp;<span class="k">"base_consultada"</span>: <span class="s">"KB-218 Reembolso"</span>,<br>&nbsp;&nbsp;<span class="k">"prioridade"</span>: <span class="s">"alta"</span><br>}</div>
+      </div>
+      <div class="cap"><span class="av">T</span><span class="txt"><b><span data-pt>Ficha.</span><span data-en>Brief.</span></b> <span data-pt>O humano entra na conversa já sabendo problema, categoria e solução — e qual base foi consultada.</span><span data-en>The human joins already knowing the problem, category and fix — and which source was used.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="9000" data-phase="3">
+      <div class="scene-inner endcard center-col">
+        <p class="scene-kicker" data-in="1">Smart Triage</p>
+        <h2 class="big" data-in="2" style="margin-inline:auto"><span data-pt>O atendente humano, turbinado — não substituído.</span><span data-en>The human agent, augmented — not replaced.</span></h2>
+        <p class="say" data-in="3" style="margin-inline:auto"><span data-pt>FastAPI + Whisper + sentence-transformers + ChromaDB + Ollama. Saída sempre em JSON estruturado.</span><span data-en>FastAPI + Whisper + sentence-transformers + ChromaDB + Ollama. Output always structured JSON.</span></p>
+        <div class="row" data-in="4">
+          <a class="btn btn-accent" href="../index.html#work"><span data-pt>Ver outros projetos</span><span data-en>See other projects</span> →</a>
+          <button class="btn btn-ghost" data-restart><span data-pt>↺ Repetir</span><span data-en>↺ Replay</span></button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="cbtns">
+    <button class="cbtn" data-restart aria-label="Restart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></button>
+    <button class="cbtn" data-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 6 8 12l6 6z"/></svg></button>
+  </div>
+  <button class="cbtn play" data-play aria-label="Play"></button>
+  <div class="cbtns"><button class="cbtn" data-next aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m10 6 6 6-6 6z"/></svg></button></div>
+  <div class="rail" id="rail"></div>
+  <span class="cstep" id="cstep"></span>
+</div>
+
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/demo.js"></script>
+</body>
+</html>

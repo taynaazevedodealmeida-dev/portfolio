@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/demo.css">
+<body class="demo-body" style="--accent:#16976A;--accent-ink:#0E6E4D" data-title-pt="Fiscal Flow — demonstração" data-title-en="Fiscal Flow — demo">
+
+<div class="dbar">
+  <a class="back" href="../index.html#work">← <span data-pt>Portfólio</span><span data-en>Portfolio</span></a>
+  <div class="who"><span class="dot"></span>Fiscal Flow <small data-pt>organiza NF-e · LIVE</small><small data-en>organize NF-e · LIVE</small></div>
+  <div class="lang" role="group" aria-label="Language"><button data-lang-btn="pt" class="on">PT</button><button data-lang-btn="en">EN</button></div>
+</div>
+
+<div class="stage-shell">
+  <div class="phases">
+    <span class="phase"><span data-pt>Solta XML</span><span data-en>Drop XML</span></span>
+    <span class="phase"><span data-pt>Lê</span><span data-en>Read</span></span>
+    <span class="phase"><span data-pt>Categoriza</span><span data-en>Categorize</span></span>
+    <span class="phase"><span data-pt>Exporta</span><span data-en>Export</span></span>
+  </div>
+  <div class="stage">
+    <div class="splash" id="splash">
+      <div class="splash-in">
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v4H4zM4 11h10v8H4zM16 11h4v8h-4z"/></svg>
+        <p class="tl" data-pt>No-code · fiscal</p><p class="tl" data-en>No-code · fiscal</p>
+        <h1>Fiscal Flow</h1>
+        <p><span data-pt>Arraste seus XMLs de NF-e e receba tudo categorizado, com gráficos e um CSV pronto pro contador.</span><span data-en>Drop your NF-e XMLs and get everything categorized, with charts and a CSV ready for your accountant.</span></p>
+        <div class="splash-cta">
+          <button class="btn btn-accent" data-start><span data-pt>▶ Iniciar demonstração</span><span data-en>▶ Start demo</span></button>
+          <button class="skip" data-skip><span data-pt>pular para o fim</span><span data-en>skip to end</span> ✕</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="scene" data-dur="5400" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>A dor</span><span data-en>The pain</span></p>
+        <h2 class="big" data-in="2"><span data-pt>O MEI vive afogado em nota fiscal.</span><span data-en>The micro-entrepreneur drowns in invoices.</span></h2>
+        <p class="say" data-in="3"><span data-pt>São 6 milhões de MEIs no Brasil — e cada XML é um problema a organizar à mão.</span><span data-en>There are 6 million micro-entrepreneurs in Brazil — and each XML is a chore to sort by hand.</span></p>
+      </div>
+      <div class="cap"><span class="av">F</span><span class="txt"><span data-pt>Tudo roda no navegador — nenhum arquivo sai do seu computador.</span><span data-en>It all runs in the browser — no file leaves your computer.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="5800" data-phase="1">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Solta os XMLs (amostra sintética)</span><span data-en>Drop the XMLs (synthetic sample)</span></p>
+        <div class="merge" style="display:flex;gap:8px;flex-wrap:wrap">
+          <div class="filechip xml" data-in="1"><span class="x">XML</span> nfe_001</div>
+          <div class="filechip xml" data-in="2"><span class="x">XML</span> nfe_002</div>
+          <div class="filechip xml" data-in="3"><span class="x">XML</span> nfe_003</div>
+          <div class="filechip xml" data-in="4"><span class="x">XML</span> +37</div>
+        </div>
+        <p class="say" style="font-size:.96rem" data-in="5"><span data-pt>Extrai número, data, fornecedor (nome + CNPJ), valor total e itens de cada nota.</span><span data-en>Extracts number, date, supplier (name + CNPJ), total and line items from each invoice.</span></p>
+      </div>
+      <div class="cap"><span class="av">F</span><span class="txt"><b><span data-pt>Lê.</span><span data-en>Read.</span></b> <span data-pt>Vários XMLs de uma vez, direto no navegador.</span><span data-en>Many XMLs at once, right in the browser.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6600" data-phase="2">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Categorização automática</span><span data-en>Automatic categorization</span></p>
+        <div class="win" data-in="2">
+          <div class="win-bar"><div class="lights"><i></i><i></i><i></i></div><span class="ttl">notas</span></div>
+          <div class="win-body">
+            <table class="dtable">
+              <tr><th>NF-e</th><th data-pt>Fornecedor</th><th data-en>Supplier</th><th data-pt>Categoria</th><th data-en>Category</th><th class="num">R$</th></tr>
+              <tr><td>001</td><td data-pt>Posto Exemplo</td><td data-en>Example Gas</td><td><span class="pill pill-good" data-pt>combustível</span><span class="pill pill-good" data-en>fuel</span></td><td class="num">312,00</td></tr>
+              <tr><td>002</td><td data-pt>Soft Exemplo</td><td data-en>Example Soft</td><td><span class="pill pill-good">software</span></td><td class="num">149,90</td></tr>
+              <tr><td>003</td><td data-pt>Papelaria X</td><td data-en>Office X</td><td><span class="pill pill-good" data-pt>escritório</span><span class="pill pill-good" data-en>office</span></td><td class="num">88,40</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">F</span><span class="txt"><b><span data-pt>Categoriza.</span><span data-en>Categorize.</span></b> <span data-pt>Por palavra-chave: combustível, alimentação, software, frete, telecom…</span><span data-en>By keyword: fuel, food, software, freight, telecom…</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6400" data-phase="3">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Resumo + exportação</span><span data-en>Summary + export</span></p>
+        <div class="cols-2">
+          <div data-in="2">
+            <div class="bars">
+              <div class="bar"><i style="--h:90%"></i><small data-pt>combust.</small><small data-en>fuel</small></div>
+              <div class="bar"><i style="--h:60%"></i><small>soft</small></div>
+              <div class="bar"><i style="--h:42%"></i><small data-pt>escrit.</small><small data-en>office</small></div>
+              <div class="bar"><i style="--h:30%"></i><small data-pt>outros</small><small data-en>other</small></div>
+            </div>
+          </div>
+          <div class="stack" data-in="3">
+            <div class="kv"><div class="row"><span data-pt>Notas</span><span data-en>Invoices</span><span>40</span></div><div class="row"><span data-pt>Total</span><span data-en>Total</span><span>R$ 9.842,30</span></div></div>
+            <div class="filechip csv" data-in="4"><span class="x">CSV</span> <span data-pt>fechamento.csv (abre no Excel)</span><span data-en>closing.csv (opens in Excel)</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">F</span><span class="txt"><b><span data-pt>Exporta.</span><span data-en>Export.</span></b> <span data-pt>Tabela, gráfico e um CSV pronto para entregar ao contador.</span><span data-en>Table, chart and a CSV ready to hand to the accountant.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="9000" data-phase="3">
+      <div class="scene-inner endcard center-col">
+        <p class="scene-kicker" data-in="1">Fiscal Flow · <span data-pt>no ar</span><span data-en>live</span></p>
+        <h2 class="big" data-in="2" style="margin-inline:auto"><span data-pt>Da pasta de XMLs ao fechamento — no navegador.</span><span data-en>From a folder of XMLs to a closing — in the browser.</span></h2>
+        <p class="say" data-in="3" style="margin-inline:auto"><span data-pt>Página única, sem servidor, sem cadastro, sem chave de API. Publicado no GitHub Pages.</span><span data-en>Single page, no server, no signup, no API key. Published on GitHub Pages.</span></p>
+        <div class="row" data-in="4">
+          <a class="btn btn-accent" href="https://taynaazevedodealmeida-dev.github.io/fiscal-flow/" target="_blank" rel="noopener"><span data-pt>Abrir o app ao vivo</span><span data-en>Open the live app</span> ↗</a>
+          <a class="btn btn-ghost" href="../index.html#work"><span data-pt>Ver outros projetos</span><span data-en>Other projects</span> →</a>
+          <button class="btn btn-ghost" data-restart>↺</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="cbtns">
+    <button class="cbtn" data-restart aria-label="Restart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></button>
+    <button class="cbtn" data-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 6 8 12l6 6z"/></svg></button>
+  </div>
+  <button class="cbtn play" data-play aria-label="Play"></button>
+  <div class="cbtns"><button class="cbtn" data-next aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m10 6 6 6-6 6z"/></svg></button></div>
+  <div class="rail" id="rail"></div>
+  <span class="cstep" id="cstep"></span>
+</div>
+
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/demo.js"></script>
+</body>
+</html>

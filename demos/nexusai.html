@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/demo.css">
+<style>
+  .integr{ display:flex; gap:8px; flex-wrap:wrap; }
+  .integr span{ font-family:var(--mono); font-size:.74rem; padding:.4em .7em; border-radius:8px; background:var(--paper); border:1px solid var(--line); }
+</style>
+<body class="demo-body" style="--accent:#2F5BD9;--accent-ink:#1E3C9E" data-title-pt="NexusAI ERP — demonstração" data-title-en="NexusAI ERP — demo">
+
+<div class="dbar">
+  <a class="back" href="../index.html#work">← <span data-pt>Portfólio</span><span data-en>Portfolio</span></a>
+  <div class="who"><span class="dot"></span>NexusAI ERP <small>Autonomous Executive Suite</small></div>
+  <div class="lang" role="group" aria-label="Language"><button data-lang-btn="pt" class="on">PT</button><button data-lang-btn="en">EN</button></div>
+</div>
+
+<div class="stage-shell">
+  <div class="phases">
+    <span class="phase"><span data-pt>Sinal</span><span data-en>Signal</span></span>
+    <span class="phase"><span data-pt>Conselho</span><span data-en>Council</span></span>
+    <span class="phase"><span data-pt>Ação</span><span data-en>Action</span></span>
+  </div>
+  <div class="stage">
+    <div class="splash" id="splash">
+      <div class="splash-in">
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="2.4"/><circle cx="5" cy="6" r="1.8"/><circle cx="19" cy="6" r="1.8"/><circle cx="5" cy="18" r="1.8"/><circle cx="19" cy="18" r="1.8"/><path d="M6.5 7 10.5 11M17.5 7 13.5 11M6.5 17 10.5 13M17.5 17 13.5 13"/></svg>
+        <p class="tl" data-pt>6 executivos de IA · 24/7</p><p class="tl" data-en>6 AI executives · 24/7</p>
+        <h1>NexusAI</h1>
+        <p><span data-pt>Seis agentes executivos operando um e-commerce sozinhos — como o seu sócio digital.</span><span data-en>Six executive agents running an e-commerce on their own — your digital partner.</span></p>
+        <div class="splash-cta">
+          <button class="btn btn-accent" data-start><span data-pt>▶ Iniciar demonstração</span><span data-en>▶ Start demo</span></button>
+          <button class="skip" data-skip><span data-pt>pular para o fim</span><span data-en>skip to end</span> ✕</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- S1 pain -->
+    <section class="scene" data-dur="5400" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>A dor</span><span data-en>The pain</span></p>
+        <h2 class="big" data-in="2"><span data-pt>Um dono de e-commerce não consegue ser CFO, CMO e COO ao mesmo tempo.</span><span data-en>An e-commerce owner can't be CFO, CMO and COO at once.</span></h2>
+        <p class="say" data-in="3"><span data-pt>Decisões importantes acontecem às 3h da manhã — e ninguém está olhando.</span><span data-en>Critical decisions happen at 3 a.m. — and nobody's watching.</span></p>
+      </div>
+      <div class="cap"><span class="av">N</span><span class="txt"><span data-pt>A NexusAI nomeia uma diretoria de IA para o seu negócio.</span><span data-en>NexusAI appoints an AI board for your business.</span></span></div>
+    </section>
+
+    <!-- S2 the 6 agents -->
+    <section class="scene" data-dur="6200" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>A diretoria</span><span data-en>The board</span></p>
+        <div class="agents">
+          <div class="agent" data-in="1"><span class="ping"></span><div class="role">CEO</div><div class="desc" data-pt>estratégia</div><div class="desc" data-en>strategy</div></div>
+          <div class="agent" data-in="2"><span class="ping"></span><div class="role">CFO</div><div class="desc" data-pt>finanças</div><div class="desc" data-en>finance</div></div>
+          <div class="agent" data-in="3"><span class="ping"></span><div class="role">CMO</div><div class="desc" data-pt>marketing</div><div class="desc" data-en>marketing</div></div>
+          <div class="agent" data-in="4"><span class="ping"></span><div class="role">COO</div><div class="desc" data-pt>operações</div><div class="desc" data-en>operations</div></div>
+          <div class="agent" data-in="5"><span class="ping"></span><div class="role">CLO</div><div class="desc" data-pt>jurídico</div><div class="desc" data-en>legal</div></div>
+          <div class="agent" data-in="6"><span class="ping"></span><div class="role">CCO</div><div class="desc" data-pt>cliente</div><div class="desc" data-en>customer</div></div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">N</span><span class="txt"><span data-pt>CrewAI + LangGraph orquestram os 6, sobre Supabase + Redis.</span><span data-en>CrewAI + LangGraph orchestrate all 6, on Supabase + Redis.</span></span></div>
+    </section>
+
+    <!-- S3 signal -->
+    <section class="scene" data-dur="6000" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>03:14 · um sinal chega</span><span data-en>03:14 · a signal arrives</span></p>
+        <div class="stack">
+          <div class="flag warn" data-in="2"><span class="ic">!</span><span class="b"><b data-pt>Pico de tráfego</b><b data-en>Traffic spike</b><small data-pt>anúncio “Black Week” converte 3×</small><small data-en>“Black Week” ad converting 3×</small></span></div>
+          <div class="flag bad" data-in="3"><span class="ic">▼</span><span class="b"><b data-pt>Estoque do best-seller acabando</b><b data-en>Best-seller stock running out</b><small data-pt>restam 28 unidades</small><small data-en>28 units left</small></span></div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">N</span><span class="txt"><b><span data-pt>Sinal.</span><span data-en>Signal.</span></b> <span data-pt>Dois eventos que, juntos, viram um problema caro.</span><span data-en>Two events that together become an expensive problem.</span></span></div>
+    </section>
+
+    <!-- S4 council -->
+    <section class="scene" data-dur="6800" data-phase="1">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>O conselho delibera</span><span data-en>The council deliberates</span></p>
+        <div class="chat">
+          <div class="bubble bot" data-in="2"><b>CMO ›</b> <span data-pt>o anúncio está voando, não corta verba.</span><span data-en>the ad is flying, don't cut budget.</span></div>
+          <div class="bubble bot" data-in="3"><b>COO ›</b> <span data-pt>mas o estoque não aguenta o ritmo.</span><span data-en>but stock won't survive the pace.</span></div>
+          <div class="bubble bot" data-in="4"><b>CFO ›</b> <span data-pt>margem permite repor hoje em regime de urgência.</span><span data-en>margin allows an urgent restock today.</span></div>
+          <div class="bubble user" data-in="5"><b>CEO ›</b> <span data-pt>repor, segurar preço e avisar o cliente. Aprovado.</span><span data-en>restock, hold price, notify customers. Approved.</span></div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">N</span><span class="txt"><b><span data-pt>Conselho.</span><span data-en>Council.</span></b> <span data-pt>Multi-LLM: Claude, Gemini, GPT-4o e Grok debatem papéis diferentes.</span><span data-en>Multi-LLM: Claude, Gemini, GPT-4o and Grok argue different roles.</span></span></div>
+    </section>
+
+    <!-- S5 action -->
+    <section class="scene" data-dur="6800" data-phase="2">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>E agem — sozinhos</span><span data-en>And they act — on their own</span></p>
+        <div class="cols-2 top">
+          <div class="stack">
+            <div class="flag good" data-in="2"><span class="ic">✓</span><span class="b"><b data-pt>Reposição emitida</b><b data-en>Restock ordered</b><small>MelhorEnvio</small></span></div>
+            <div class="flag good" data-in="3"><span class="ic">✓</span><span class="b"><b data-pt>Anúncio mantido + escalado</b><b data-en>Ad kept + scaled</b><small>Meta Ads</small></span></div>
+            <div class="flag good" data-in="4"><span class="ic">✓</span><span class="b"><b data-pt>Clientes avisados</b><b data-en>Customers notified</b><small>Twilio WhatsApp</small></span></div>
+          </div>
+          <div class="integr" data-in="5">
+            <span>Shopify</span><span>Mercado Livre</span><span>MercadoPago</span><span>Google Ads</span><span>n8n</span><span>Supabase</span>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">N</span><span class="txt"><b><span data-pt>Ação.</span><span data-en>Action.</span></b> <span data-pt>Plugado nas ferramentas reais do e-commerce — decide e executa.</span><span data-en>Wired into the real e-commerce stack — decides and executes.</span></span></div>
+    </section>
+
+    <!-- end -->
+    <section class="scene" data-dur="9000" data-phase="2">
+      <div class="scene-inner endcard center-col">
+        <p class="scene-kicker" data-in="1">NexusAI ERP</p>
+        <h2 class="big" data-in="2" style="margin-inline:auto"><span data-pt>Uma diretoria que opera o negócio enquanto você dorme.</span><span data-en>A board that runs the business while you sleep.</span></h2>
+        <p class="say" data-in="3" style="margin-inline:auto"><span data-pt>6 agentes · CrewAI + LangGraph · multi-LLM · FastAPI + Supabase + Redis · Docker. Arquitetura desenhada por mim.</span><span data-en>6 agents · CrewAI + LangGraph · multi-LLM · FastAPI + Supabase + Redis · Docker. Architecture designed by me.</span></p>
+        <div class="row" data-in="4">
+          <a class="btn btn-accent" href="../index.html#work"><span data-pt>Ver outros projetos</span><span data-en>See other projects</span> →</a>
+          <button class="btn btn-ghost" data-restart><span data-pt>↺ Repetir</span><span data-en>↺ Replay</span></button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="cbtns">
+    <button class="cbtn" data-restart aria-label="Restart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></button>
+    <button class="cbtn" data-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 6 8 12l6 6z"/></svg></button>
+  </div>
+  <button class="cbtn play" data-play aria-label="Play"></button>
+  <div class="cbtns"><button class="cbtn" data-next aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m10 6 6 6-6 6z"/></svg></button></div>
+  <div class="rail" id="rail"></div>
+  <span class="cstep" id="cstep"></span>
+</div>
+
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/demo.js"></script>
+</body>
+</html>

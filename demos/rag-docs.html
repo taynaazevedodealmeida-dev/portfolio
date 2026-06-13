@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/demo.css">
+<style>
+  .cite{ font-family:var(--mono); font-size:.72rem; color:var(--accent-ink); background:var(--accent-wash); border-radius:6px; padding:.15em .5em; }
+  .chunk{ height:9px; border-radius:4px; background:color-mix(in srgb,var(--accent) 22%,transparent); }
+  .scene.is-active .chunk{ animation:sceneIn .6s var(--ease-out) both; }
+</style>
+<body class="demo-body" style="--accent:#5A43E0;--accent-ink:#3A29A8" data-title-pt="RAG Docs — demonstração" data-title-en="RAG Docs — demo">
+
+<div class="dbar">
+  <a class="back" href="../index.html#work">← <span data-pt>Portfólio</span><span data-en>Portfolio</span></a>
+  <div class="who"><span class="dot"></span>RAG Docs <small data-pt>pergunte aos seus documentos</small><small data-en>ask your documents</small></div>
+  <div class="lang" role="group" aria-label="Language"><button data-lang-btn="pt" class="on">PT</button><button data-lang-btn="en">EN</button></div>
+</div>
+
+<div class="stage-shell">
+  <div class="phases">
+    <span class="phase"><span data-pt>Documentos</span><span data-en>Documents</span></span>
+    <span class="phase"><span data-pt>Indexa</span><span data-en>Index</span></span>
+    <span class="phase"><span data-pt>Pergunta</span><span data-en>Ask</span></span>
+    <span class="phase"><span data-pt>Resposta</span><span data-en>Answer</span></span>
+  </div>
+  <div class="stage">
+    <div class="splash" id="splash">
+      <div class="splash-in">
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 3h7l5 5v13H7z" opacity=".5"/><path d="M14 3v5h5"/><circle cx="11" cy="14" r="3"/><path d="m14 17 2 2"/></svg>
+        <p class="tl" data-pt>IA aplicada · RAG</p><p class="tl" data-en>Applied AI · RAG</p>
+        <h1>RAG Docs</h1>
+        <p><span data-pt>Pergunte em linguagem natural aos seus documentos — e receba a resposta com a fonte citada.</span><span data-en>Ask your documents in plain language — and get the answer with the source cited.</span></p>
+        <div class="splash-cta">
+          <button class="btn btn-accent" data-start><span data-pt>▶ Iniciar demonstração</span><span data-en>▶ Start demo</span></button>
+          <button class="skip" data-skip><span data-pt>pular para o fim</span><span data-en>skip to end</span> ✕</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="scene" data-dur="5400" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>A dor</span><span data-en>The pain</span></p>
+        <h2 class="big" data-in="2"><span data-pt>A resposta existe — enterrada em 300 páginas de PDF.</span><span data-en>The answer exists — buried in 300 pages of PDF.</span></h2>
+        <p class="say" data-in="3"><span data-pt>Manuais, contratos, políticas. Ninguém lê tudo de novo a cada dúvida.</span><span data-en>Manuals, contracts, policies. Nobody re-reads it all for every question.</span></p>
+      </div>
+      <div class="cap"><span class="av">R</span><span class="txt"><span data-pt>O RAG Docs transforma o acervo em algo que responde.</span><span data-en>RAG Docs turns the archive into something that answers.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6200" data-phase="1">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Indexação (amostra sintética)</span><span data-en>Indexing (synthetic sample)</span></p>
+        <div class="merge" style="display:flex;gap:8px;flex-wrap:wrap">
+          <div class="filechip pdf" data-in="1"><span class="x">PDF</span> manual.pdf</div>
+          <div class="filechip doc" data-in="2"><span class="x">DOCX</span> politica.docx</div>
+          <div class="filechip pdf" data-in="3"><span class="x">PDF</span> contrato.pdf</div>
+        </div>
+        <div class="stack" style="gap:6px;margin-top:6px" data-in="4">
+          <div class="chunk" style="width:90%"></div><div class="chunk" style="width:70%"></div><div class="chunk" style="width:82%"></div>
+        </div>
+        <p class="say" style="font-size:.96rem" data-in="5"><span data-pt>Cada documento é fatiado e transformado em <b>embeddings</b>, guardados num índice vetorial.</span><span data-en>Each document is chunked and turned into <b>embeddings</b>, stored in a vector index.</span></p>
+      </div>
+      <div class="cap"><span class="av">R</span><span class="txt"><b><span data-pt>Indexa.</span><span data-en>Index.</span></b> <span data-pt>Roda local — seus documentos não saem da sua máquina.</span><span data-en>Runs locally — your documents never leave your machine.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="5800" data-phase="2">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>A pergunta</span><span data-en>The question</span></p>
+        <div class="chat">
+          <div class="bubble user" data-in="2"><span data-pt>Qual o prazo de garantia previsto no contrato?</span><span data-en>What's the warranty period stated in the contract?</span></div>
+          <div class="bubble bot" data-in="3"><span class="dots" data-pt>buscando trechos relevantes</span><span class="dots" data-en>retrieving relevant passages</span></div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">R</span><span class="txt"><b><span data-pt>Pergunta.</span><span data-en>Ask.</span></b> <span data-pt>Recupera os trechos mais próximos do sentido da pergunta.</span><span data-en>Retrieves the passages closest in meaning to the question.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6600" data-phase="3">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>A resposta — com fonte</span><span data-en>The answer — with source</span></p>
+        <div class="chat">
+          <div class="bubble user" data-in="2"><span data-pt>Qual o prazo de garantia previsto no contrato?</span><span data-en>What's the warranty period stated in the contract?</span></div>
+          <div class="bubble bot" data-in="3"><span data-pt>O prazo de garantia é de <b>12 meses</b> a partir da entrega. <br><span class="cite">fonte: contrato.pdf · pág. 7, cláusula 9.2</span></span><span data-en>The warranty period is <b>12 months</b> from delivery. <br><span class="cite">source: contrato.pdf · p. 7, clause 9.2</span></span></div>
+        </div>
+        <div class="flag good" data-in="4" style="margin-top:6px"><span class="ic">✓</span><span class="b"><b data-pt>Sem invenção</b><b data-en>No invention</b><small data-pt>se não está nos documentos, ela diz que não sabe</small><small data-en>if it's not in the documents, it says it doesn't know</small></span></div>
+      </div>
+      <div class="cap"><span class="av">R</span><span class="txt"><b><span data-pt>Resposta.</span><span data-en>Answer.</span></b> <span data-pt>Toda afirmação aponta para a página de origem — auditável.</span><span data-en>Every claim points to its source page — auditable.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="9000" data-phase="3">
+      <div class="scene-inner endcard center-col">
+        <p class="scene-kicker" data-in="1">RAG Docs</p>
+        <h2 class="big" data-in="2" style="margin-inline:auto"><span data-pt>Seu acervo, agora pesquisável e confiável.</span><span data-en>Your archive, now searchable and trustworthy.</span></h2>
+        <p class="say" data-in="3" style="margin-inline:auto"><span data-pt>Recuperação por embeddings + LLM com citação obrigatória da fonte. Peça de portfólio em Python.</span><span data-en>Embedding retrieval + LLM with mandatory source citation. A Python portfolio piece.</span></p>
+        <div class="row" data-in="4">
+          <a class="btn btn-accent" href="../index.html#work"><span data-pt>Ver outros projetos</span><span data-en>See other projects</span> →</a>
+          <button class="btn btn-ghost" data-restart><span data-pt>↺ Repetir</span><span data-en>↺ Replay</span></button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="cbtns">
+    <button class="cbtn" data-restart aria-label="Restart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></button>
+    <button class="cbtn" data-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 6 8 12l6 6z"/></svg></button>
+  </div>
+  <button class="cbtn play" data-play aria-label="Play"></button>
+  <div class="cbtns"><button class="cbtn" data-next aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m10 6 6 6-6 6z"/></svg></button></div>
+  <div class="rail" id="rail"></div>
+  <span class="cstep" id="cstep"></span>
+</div>
+
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/demo.css">
+<body class="demo-body" style="--accent:#16976A;--accent-ink:#0E6E4D" data-title-pt="Conta Certa — demonstração" data-title-en="Conta Certa — demo">
+
+<div class="dbar">
+  <a class="back" href="../index.html#work">← <span data-pt>Portfólio</span><span data-en>Portfolio</span></a>
+  <div class="who"><span class="dot"></span>Conta Certa <small data-pt>risco fiscal · NF-e</small><small data-en>fiscal risk · e-invoice</small></div>
+  <div class="lang" role="group" aria-label="Language"><button data-lang-btn="pt" class="on">PT</button><button data-lang-btn="en">EN</button></div>
+</div>
+
+<div class="stage-shell">
+  <div class="phases">
+    <span class="phase">NF-e</span>
+    <span class="phase"><span data-pt>Extrai</span><span data-en>Extract</span></span>
+    <span class="phase"><span data-pt>Analisa</span><span data-en>Analyze</span></span>
+    <span class="phase"><span data-pt>Laudo</span><span data-en>Report</span></span>
+  </div>
+  <div class="stage">
+    <div class="splash" id="splash">
+      <div class="splash-in">
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 3h10l3 3v15H4V3z" opacity=".5"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>
+        <p class="tl" data-pt>SaaS vertical · Fiscal</p><p class="tl" data-en>Vertical SaaS · Tax</p>
+        <h1>Conta Certa</h1>
+        <p><span data-pt>Lê notas fiscais eletrônicas e aponta o risco fiscal — com a base legal de cada apontamento.</span><span data-en>Reads electronic invoices and flags fiscal risk — with the legal basis behind each finding.</span></p>
+        <div class="splash-cta">
+          <button class="btn btn-accent" data-start><span data-pt>▶ Iniciar demonstração</span><span data-en>▶ Start demo</span></button>
+          <button class="skip" data-skip><span data-pt>pular para o fim</span><span data-en>skip to end</span> ✕</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="scene" data-dur="5400" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>A dor</span><span data-en>The pain</span></p>
+        <h2 class="big" data-in="2"><span data-pt>O erro fiscal só aparece na malha fina.</span><span data-en>The tax error only surfaces in the audit.</span></h2>
+        <p class="say" data-in="3"><span data-pt>CFOP trocado, alíquota errada, crédito indevido — escondidos em centenas de XMLs.</span><span data-en>Wrong CFOP, wrong rate, undue credit — buried across hundreds of XMLs.</span></p>
+      </div>
+      <div class="cap"><span class="av">C</span><span class="txt"><span data-pt>A Conta Certa revisa cada nota antes que o Fisco reveja.</span><span data-en>Conta Certa reviews each invoice before the tax office does.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6200" data-phase="1">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Leitura do XML (amostra sintética)</span><span data-en>XML reading (synthetic sample)</span></p>
+        <div class="cols-2 top">
+          <div class="filechip xml" data-in="2" style="width:fit-content"><span class="x">XML</span> nfe_exemplo.xml</div>
+          <div class="kv" data-in="3">
+            <div class="row"><span>NF-e</span><span>000.000.000</span></div>
+            <div class="row"><span data-pt>Emitente</span><span data-en>Issuer</span><span>Fornecedor Exemplo</span></div>
+            <div class="row"><span>CNPJ</span><span>00.000.000/0001-00</span></div>
+            <div class="row"><span>CFOP</span><span>5.102</span></div>
+            <div class="row"><span data-pt>Valor</span><span data-en>Amount</span><span>R$ 24.800,00</span></div>
+            <div class="row"><span>ICMS</span><span>R$ 2.976,00</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">C</span><span class="txt"><b><span data-pt>Extrai.</span><span data-en>Extract.</span></b> <span data-pt>Lê o XML da NF-e/NFC-e e estrutura os campos fiscais.</span><span data-en>Parses the NF-e/NFC-e XML and structures the fiscal fields.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="7000" data-phase="2">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Regras fiscais auditáveis</span><span data-en>Audited fiscal rules</span></p>
+        <div class="stack">
+          <div class="flag bad" data-in="2"><span class="ic">⚑</span><span class="b"><b data-pt>CFOP incompatível com a operação</b><b data-en>CFOP inconsistent with the operation</b><small data-pt>venda interna marcada como industrialização</small><small data-en>internal sale tagged as industrialization</small></span><span class="base">CFOP 5.101/5.102</span></div>
+          <div class="flag warn" data-in="3"><span class="ic">%</span><span class="b"><b data-pt>Alíquota de ICMS divergente do estado</b><b data-en>ICMS rate diverges from the state</b><small data-pt>12% aplicado onde se espera 18%</small><small data-en>12% applied where 18% is expected</small></span><span class="base">RICMS</span></div>
+          <div class="flag warn" data-in="4"><span class="ic">$</span><span class="b"><b data-pt>Crédito de PIS/COFINS a revisar</b><b data-en>PIS/COFINS credit to review</b><small data-pt>item sem direito a crédito</small><small data-en>item not eligible for credit</small></span><span class="base">Lei 10.833/03</span></div>
+          <div class="flag good" data-in="5"><span class="ic">✓</span><span class="b"><b data-pt>NCM coerente com o produto</b><b data-en>NCM consistent with the product</b></span><span class="base">TIPI</span></div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">C</span><span class="txt"><b><span data-pt>Analisa.</span><span data-en>Analyze.</span></b> <span data-pt>Regra pura com severidade e base legal — 9 testes verdes.</span><span data-en>Pure rules with severity and legal basis — 9 passing tests.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6400" data-phase="3">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>O laudo</span><span data-en>The report</span></p>
+        <div class="cols-2">
+          <div style="display:grid;place-items:center" data-in="2">
+            <div class="gauge" style="--p:64;--gc:#E2A33A"><span class="val">64</span><span class="lbl" data-pt>risco</span><span class="lbl" data-en>risk</span></div>
+          </div>
+          <div class="stack" data-in="3">
+            <p class="say" style="font-size:1rem"><span data-pt><b>Atenção.</b> 1 erro de CFOP, 1 alíquota e 1 crédito a revisar antes de transmitir.</span><span data-en><b>Caution.</b> 1 CFOP error, 1 rate and 1 credit to review before filing.</span></p>
+            <div class="flag good" data-in="4"><span class="ic">CSV</span><span class="b"><b data-pt>Pronto pro contador</b><b data-en>Ready for the accountant</b><small data-pt>exporta o lote revisado</small><small data-en>exports the reviewed batch</small></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">C</span><span class="txt"><b><span data-pt>Laudo.</span><span data-en>Report.</span></b> <span data-pt>Aponta o risco antes do envio — a decisão é da empresa.</span><span data-en>Flags the risk before filing — the company decides.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="9000" data-phase="3">
+      <div class="scene-inner endcard center-col">
+        <p class="scene-kicker" data-in="1">Conta Certa</p>
+        <h2 class="big" data-in="2" style="margin-inline:auto"><span data-pt>Risco fiscal sob controle, nota a nota.</span><span data-en>Fiscal risk under control, invoice by invoice.</span></h2>
+        <p class="say" data-in="3" style="margin-inline:auto"><span data-pt>Mesma arquitetura da linha “Intel”: Python/FastAPI + janela nativa + app desktop instalável.</span><span data-en>Same “Intel” line architecture: Python/FastAPI + native window + installable desktop app.</span></p>
+        <div class="row" data-in="4">
+          <a class="btn btn-accent" href="../index.html#work"><span data-pt>Ver outros projetos</span><span data-en>See other projects</span> →</a>
+          <button class="btn btn-ghost" data-restart><span data-pt>↺ Repetir</span><span data-en>↺ Replay</span></button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="cbtns">
+    <button class="cbtn" data-restart aria-label="Restart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></button>
+    <button class="cbtn" data-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 6 8 12l6 6z"/></svg></button>
+  </div>
+  <button class="cbtn play" data-play aria-label="Play"></button>
+  <div class="cbtns"><button class="cbtn" data-next aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m10 6 6 6-6 6z"/></svg></button></div>
+  <div class="rail" id="rail"></div>
+  <span class="cstep" id="cstep"></span>
+</div>
+
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/demo.js"></script>
+</body>
+</html>

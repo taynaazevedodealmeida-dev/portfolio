@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/demo.css">
+<style>
+  .json{ background:#15141A; color:#E8E3DC; border-radius:12px; padding:14px 16px; font-family:var(--mono); font-size:.8rem; line-height:1.7; overflow:auto; }
+  .json .k{ color:#C9B8FF } .json .s{ color:#7FD8A6 } .json .n{ color:#F2B36b }
+  .headline{ font-family:var(--serif); font-size:1.35rem; line-height:1.25; }
+  .mark-flag{ background:color-mix(in srgb,var(--accent) 18%,transparent); border-bottom:2px solid var(--accent); padding:0 2px; border-radius:3px; }
+</style>
+<body class="demo-body" style="--accent:#D2483F;--accent-ink:#A8322B" data-title-pt="Fake-News Detector — demonstração" data-title-en="Fake-News Detector — demo">
+
+<div class="dbar">
+  <a class="back" href="../index.html#work">← <span data-pt>Portfólio</span><span data-en>Portfolio</span></a>
+  <div class="who"><span class="dot"></span>Fake-News Detector <small>REST · PT/EN</small></div>
+  <div class="lang" role="group" aria-label="Language"><button data-lang-btn="pt" class="on">PT</button><button data-lang-btn="en">EN</button></div>
+</div>
+
+<div class="stage-shell">
+  <div class="phases">
+    <span class="phase"><span data-pt>Notícia</span><span data-en>Article</span></span>
+    <span class="phase"><span data-pt>Linguística</span><span data-en>Linguistic</span></span>
+    <span class="phase"><span data-pt>Verifica</span><span data-en>Cross-check</span></span>
+    <span class="phase">Score</span>
+  </div>
+  <div class="stage">
+    <div class="splash" id="splash">
+      <div class="splash-in">
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 3 7v5c0 5 4 8 9 9 5-1 9-4 9-9V7z"/><path d="M12 8v5M12 16h.01"/></svg>
+        <p class="tl" data-pt>IA aplicada · NLP</p><p class="tl" data-en>Applied AI · NLP</p>
+        <h1>Fake-News Detector</h1>
+        <p><span data-pt>Uma API que dá um score de credibilidade a notícias em PT e EN — e explica os sinais de alerta.</span><span data-en>A REST API that scores news credibility in PT and EN — and explains the red flags.</span></p>
+        <div class="splash-cta">
+          <button class="btn btn-accent" data-start><span data-pt>▶ Iniciar demonstração</span><span data-en>▶ Start demo</span></button>
+          <button class="skip" data-skip><span data-pt>pular para o fim</span><span data-en>skip to end</span> ✕</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="scene" data-dur="5600" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>A dor</span><span data-en>The pain</span></p>
+        <h2 class="big" data-in="2"><span data-pt>O Brasil é um dos maiores propagadores de desinformação — e quase não há ferramenta em português.</span><span data-en>Brazil is among the largest spreaders of misinformation — with almost no Portuguese-language tool.</span></h2>
+      </div>
+      <div class="cap"><span class="av">F</span><span class="txt"><span data-pt>Este detector abre uma API que qualquer app pode chamar.</span><span data-en>This detector exposes an API any app can call.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="5800" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1">POST /analyze · <span data-pt>amostra sintética</span><span data-en>synthetic sample</span></p>
+        <div class="win" data-in="2">
+          <div class="win-bar"><div class="lights"><i></i><i></i><i></i></div><span class="ttl" data-pt>entrada</span><span class="ttl" data-en>input</span></div>
+          <div class="win-body">
+            <p class="headline"><span data-pt>“URGENTE!!! Cientistas ESCONDEM cura milagrosa que a indústria NÃO quer que você veja”</span><span data-en>“URGENT!!! Scientists HIDE miracle cure the industry DOESN'T want you to see”</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">F</span><span class="txt"><b><span data-pt>Notícia.</span><span data-en>Article.</span></b> <span data-pt>Título + corpo, em PT ou EN. Idioma detectado automaticamente.</span><span data-en>Title + body, in PT or EN. Language auto-detected.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6400" data-phase="1">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Análise linguística</span><span data-en>Linguistic analysis</span></p>
+        <div class="stack">
+          <div class="flag bad" data-in="2"><span class="ic">!</span><span class="b"><b data-pt>Sensacionalismo e CAIXA ALTA</b><b data-en>Sensationalism and ALL-CAPS</b><small data-pt>“URGENTE”, “ESCONDEM”, “milagrosa”</small><small data-en>“URGENT”, “HIDE”, “miracle”</small></span></div>
+          <div class="flag bad" data-in="3"><span class="ic">⌀</span><span class="b"><b data-pt>Nenhuma fonte citada</b><b data-en>No source cited</b><small data-pt>sem autor, sem instituição, sem data</small><small data-en>no author, institution or date</small></span></div>
+          <div class="flag warn" data-in="4"><span class="ic">⚡</span><span class="b"><b data-pt>Apelo à urgência e à conspiração</b><b data-en>Urgency and conspiracy appeal</b></span></div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">F</span><span class="txt"><b><span data-pt>Linguística.</span><span data-en>Linguistic.</span></b> <span data-pt>Padrões de texto típicos de desinformação.</span><span data-en>Text patterns typical of misinformation.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6200" data-phase="2">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Verificação das alegações</span><span data-en>Claim cross-check</span></p>
+        <div class="think">
+          <div class="step" data-in="2"><span class="n">↗</span><span data-pt>Busca a alegação na web e confronta com fontes</span><span data-en>Searches the claim on the web and confronts sources</span></div>
+          <div class="step" data-in="3"><span class="n">≠</span><span data-pt>“cura milagrosa” não confirmada por nenhuma fonte confiável</span><span data-en>“miracle cure” unconfirmed by any reliable source</span></div>
+          <div class="step" data-in="4"><span class="n">✓</span><span data-pt>raciocínio do modelo (Llama 3.2 / Anthropic) registrado</span><span data-en>model reasoning (Llama 3.2 / Anthropic) logged</span></div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">F</span><span class="txt"><b><span data-pt>Verifica.</span><span data-en>Cross-check.</span></b> <span data-pt>Linguística + checagem de fatos, combinadas.</span><span data-en>Linguistics + fact-checking, combined.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6600" data-phase="3">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Resposta da API</span><span data-en>API response</span></p>
+        <div class="cols-2">
+          <div style="display:grid;place-items:center" data-in="2">
+            <div class="gauge" style="--p:18;--gc:#D2483F"><span class="val">18</span><span class="lbl" data-pt>credibilidade</span><span class="lbl" data-en>credibility</span></div>
+          </div>
+          <div class="json" data-in="3">{<br>&nbsp;&nbsp;<span class="k">"score"</span>: <span class="n">18</span>,<br>&nbsp;&nbsp;<span class="k">"verdict"</span>: <span class="s">"baixa credibilidade"</span>,<br>&nbsp;&nbsp;<span class="k">"lang"</span>: <span class="s">"pt"</span>,<br>&nbsp;&nbsp;<span class="k">"flags"</span>: [<span class="s">"sensacionalismo"</span>, <span class="s">"sem_fonte"</span>, <span class="s">"alegacao_nao_confirmada"</span>]<br>}</div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">F</span><span class="txt"><b>Score.</b> <span data-pt>JSON pronto para integrar — score + veredito + sinais explicados.</span><span data-en>Integration-ready JSON — score + verdict + explained signals.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="9000" data-phase="3">
+      <div class="scene-inner endcard center-col">
+        <p class="scene-kicker" data-in="1">Fake-News Detector</p>
+        <h2 class="big" data-in="2" style="margin-inline:auto"><span data-pt>Credibilidade explicável — não um “verdadeiro/falso” cego.</span><span data-en>Explainable credibility — not a blind “true/false”.</span></h2>
+        <p class="say" data-in="3" style="margin-inline:auto"><span data-pt>API REST em Python, Llama 3.2 via Ollama, suporte PT/EN. Repositório público de portfólio.</span><span data-en>Python REST API, Llama 3.2 via Ollama, PT/EN support. Public portfolio repository.</span></p>
+        <div class="row" data-in="4">
+          <a class="btn btn-accent" href="../index.html#work"><span data-pt>Ver outros projetos</span><span data-en>See other projects</span> →</a>
+          <button class="btn btn-ghost" data-restart><span data-pt>↺ Repetir</span><span data-en>↺ Replay</span></button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="cbtns">
+    <button class="cbtn" data-restart aria-label="Restart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></button>
+    <button class="cbtn" data-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 6 8 12l6 6z"/></svg></button>
+  </div>
+  <button class="cbtn play" data-play aria-label="Play"></button>
+  <div class="cbtns"><button class="cbtn" data-next aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m10 6 6 6-6 6z"/></svg></button></div>
+  <div class="rail" id="rail"></div>
+  <span class="cstep" id="cstep"></span>
+</div>
+
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/demo.js"></script>
+</body>
+</html>

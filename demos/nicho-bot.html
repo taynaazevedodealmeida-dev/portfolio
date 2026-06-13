@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/demo.css">
+<style>
+  .niches{ display:flex; gap:8px; flex-wrap:wrap; }
+  .niches span{ border:1px solid var(--line); border-radius:100px; padding:.4em .9em; font-size:.84rem; background:var(--card); }
+  .niches span.sel{ background:var(--accent); color:#fff; border-color:transparent; }
+</style>
+<body class="demo-body" style="--accent:#25A06A;--accent-ink:#15784D" data-title-pt="Nicho-Bot — demonstração" data-title-en="Nicho-Bot — demo">
+
+<div class="dbar">
+  <a class="back" href="../index.html#work">← <span data-pt>Portfólio</span><span data-en>Portfolio</span></a>
+  <div class="who"><span class="dot"></span>Nicho-Bot <small data-pt>chatbot por nicho · LIVE</small><small data-en>niche chatbot · LIVE</small></div>
+  <div class="lang" role="group" aria-label="Language"><button data-lang-btn="pt" class="on">PT</button><button data-lang-btn="en">EN</button></div>
+</div>
+
+<div class="stage-shell">
+  <div class="phases">
+    <span class="phase"><span data-pt>Nicho</span><span data-en>Niche</span></span>
+    <span class="phase"><span data-pt>Configura</span><span data-en>Configure</span></span>
+    <span class="phase"><span data-pt>Simula</span><span data-en>Simulate</span></span>
+    <span class="phase"><span data-pt>Exporta</span><span data-en>Export</span></span>
+  </div>
+  <div class="stage">
+    <div class="splash" id="splash">
+      <div class="splash-in">
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 10h8M8 13h5"/></svg>
+        <p class="tl" data-pt>No-code · WhatsApp</p><p class="tl" data-en>No-code · WhatsApp</p>
+        <h1>Nicho-Bot</h1>
+        <p><span data-pt>Monte um chatbot de WhatsApp já treinado para o seu nicho — em minutos, sem código.</span><span data-en>Build a WhatsApp chatbot pre-trained for your niche — in minutes, no code.</span></p>
+        <div class="splash-cta">
+          <button class="btn btn-accent" data-start><span data-pt>▶ Iniciar demonstração</span><span data-en>▶ Start demo</span></button>
+          <button class="skip" data-skip><span data-pt>pular para o fim</span><span data-en>skip to end</span> ✕</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="scene" data-dur="5200" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>A dor</span><span data-en>The pain</span></p>
+        <h2 class="big" data-in="2"><span data-pt>O lead chega às 22h — e ninguém responde.</span><span data-en>The lead arrives at 10pm — and nobody replies.</span></h2>
+        <p class="say" data-in="3"><span data-pt>A PME perde cliente no WhatsApp fora do horário comercial.</span><span data-en>SMBs lose customers on WhatsApp outside business hours.</span></p>
+      </div>
+      <div class="cap"><span class="av">N</span><span class="txt"><span data-pt>O Nicho-Bot monta um atendente virtual que nunca dorme.</span><span data-en>Nicho-Bot builds a virtual attendant that never sleeps.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6000" data-phase="1">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Escolha o nicho · já vem treinado</span><span data-en>Pick the niche · pre-trained</span></p>
+        <div class="niches">
+          <span class="sel" data-in="1" data-pt>Odontologia</span><span class="sel" data-in="1" data-en>Dentistry</span>
+          <span data-in="2" data-pt>Salão / Estética</span><span data-in="2" data-en>Salon</span>
+          <span data-in="3" data-pt>Advocacia</span><span data-in="3" data-en>Law</span>
+          <span data-in="4" data-pt>Imobiliária</span><span data-in="4" data-en>Real estate</span>
+          <span data-in="5" data-pt>Restaurante</span><span data-in="5" data-en>Restaurant</span>
+        </div>
+        <p class="say" style="font-size:.96rem" data-in="6"><span data-pt>Cada nicho já vem com perguntas, respostas e tom de voz do setor — você só edita.</span><span data-en>Each niche ships with sector questions, answers and tone of voice — you just edit.</span></p>
+      </div>
+      <div class="cap"><span class="av">N</span><span class="txt"><b><span data-pt>Configura.</span><span data-en>Configure.</span></b> <span data-pt>Pares pergunta→resposta, boas-vindas e fallback.</span><span data-en>Question→answer pairs, welcome and fallback.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6800" data-phase="2">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Simulação da conversa</span><span data-en>Conversation simulation</span></p>
+        <div class="chat">
+          <div class="bubble user" data-in="2"><span data-pt>Vocês atendem aos sábados?</span><span data-en>Are you open on Saturdays?</span></div>
+          <div class="bubble bot" data-in="3"><span data-pt>Sim! 9h às 13h. Quer que eu já agende uma avaliação? 😊</span><span data-en>Yes! 9am–1pm. Want me to book an evaluation? 😊</span></div>
+          <div class="bubble user" data-in="4"><span data-pt>Quero, pode ser sábado de manhã.</span><span data-en>Yes, Saturday morning works.</span></div>
+          <div class="bubble bot" data-in="5"><span data-pt>Perfeito! Me passa seu nome e telefone que eu reservo. ✅</span><span data-en>Perfect! Send me your name and phone and I'll reserve it. ✅</span></div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">N</span><span class="txt"><b><span data-pt>Simula.</span><span data-en>Simulate.</span></b> <span data-pt>Responde a dúvida e captura o agendamento/lead.</span><span data-en>Answers the question and captures the booking/lead.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6000" data-phase="3">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Exporta o bot montado</span><span data-en>Exports the assembled bot</span></p>
+        <div class="cols-2 top">
+          <div class="filechip csv" data-in="2" style="width:fit-content"><span class="x">JSON</span> bot_odonto.json</div>
+          <div class="stack" data-in="3">
+            <div class="flag good"><span class="ic">✓</span><span class="b"><b data-pt>Roteiro testado e pronto</b><b data-en>Tested, ready script</b><small data-pt>é só instalar no WhatsApp depois</small><small data-en>just install on WhatsApp later</small></span></div>
+            <div class="flag warn"><span class="ic">i</span><span class="b"><b data-pt>MVP custo zero</b><b data-en>Zero-cost MVP</b><small data-pt>evolução: conectar ao WhatsApp real via Twilio</small><small data-en>roadmap: connect to real WhatsApp via Twilio</small></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">N</span><span class="txt"><b><span data-pt>Exporta.</span><span data-en>Export.</span></b> <span data-pt>Entrega o bot montado e testado, num arquivo de configuração.</span><span data-en>Delivers the assembled, tested bot as a config file.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="9000" data-phase="3">
+      <div class="scene-inner endcard center-col">
+        <p class="scene-kicker" data-in="1">Nicho-Bot · <span data-pt>no ar</span><span data-en>live</span></p>
+        <h2 class="big" data-in="2" style="margin-inline:auto"><span data-pt>Um atendente de WhatsApp pronto em minutos.</span><span data-en>A WhatsApp attendant ready in minutes.</span></h2>
+        <p class="say" data-in="3" style="margin-inline:auto"><span data-pt>Construtor + simulador 100% client-side, sem servidor nem chave paga. Publicado no GitHub Pages.</span><span data-en>A 100% client-side builder + simulator, no server or paid key. Published on GitHub Pages.</span></p>
+        <div class="row" data-in="4">
+          <a class="btn btn-accent" href="https://taynaazevedodealmeida-dev.github.io/nicho-bot/" target="_blank" rel="noopener"><span data-pt>Abrir o app ao vivo</span><span data-en>Open the live app</span> ↗</a>
+          <a class="btn btn-ghost" href="../index.html#work"><span data-pt>Ver outros projetos</span><span data-en>Other projects</span> →</a>
+          <button class="btn btn-ghost" data-restart>↺</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="cbtns">
+    <button class="cbtn" data-restart aria-label="Restart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></button>
+    <button class="cbtn" data-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 6 8 12l6 6z"/></svg></button>
+  </div>
+  <button class="cbtn play" data-play aria-label="Play"></button>
+  <div class="cbtns"><button class="cbtn" data-next aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m10 6 6 6-6 6z"/></svg></button></div>
+  <div class="rail" id="rail"></div>
+  <span class="cstep" id="cstep"></span>
+</div>
+
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/demo.js"></script>
+</body>
+</html>

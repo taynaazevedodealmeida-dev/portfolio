@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/demo.css">
+<style>
+  .merge{ display:flex; gap:8px; flex-wrap:wrap; }
+  .dataset-dot{ width:54px;height:54px;border-radius:14px;display:grid;place-items:center;background:var(--accent);color:#fff;box-shadow:var(--sh-2);}
+  .lockbox{ border:1px dashed color-mix(in srgb,var(--accent) 45%,transparent); border-radius:16px; padding:18px; background:color-mix(in srgb,var(--accent) 5%,var(--card)); position:relative;}
+  .lockbox .lk{ position:absolute; top:-13px; right:16px; background:var(--accent); color:#fff; border-radius:100px; font-size:.66rem; font-family:var(--mono); padding:.3em .7em; display:flex; gap:.4em; align-items:center;}
+</style>
+<body class="demo-body" style="--accent:#5A43E0;--accent-ink:#3A29A8" data-title-pt="DITA — demonstração" data-title-en="DITA — demo">
+
+<div class="dbar">
+  <a class="back" href="../index.html#work">← <span data-pt>Portfólio</span><span data-en>Portfolio</span></a>
+  <div class="who"><span class="dot"></span>DITA <small>Dream · Imagine · Think · Act</small></div>
+  <div class="lang" role="group" aria-label="Language">
+    <button data-lang-btn="pt" class="on">PT</button><button data-lang-btn="en">EN</button>
+  </div>
+</div>
+
+<div class="stage-shell">
+  <div class="phases">
+    <span class="phase"><span data-pt>Sonhar</span><span data-en>Dream</span></span>
+    <span class="phase"><span data-pt>Imaginar</span><span data-en>Imagine</span></span>
+    <span class="phase"><span data-pt>Pensar</span><span data-en>Think</span></span>
+    <span class="phase"><span data-pt>Agir</span><span data-en>Act</span></span>
+  </div>
+
+  <div class="stage">
+    <!-- SPLASH -->
+    <div class="splash" id="splash">
+      <div class="splash-in">
+        <svg class="mark" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.3" opacity=".4"/><path d="M16 3C9 11 9 21 16 29 23 21 23 11 16 3Z" fill="currentColor" opacity=".9"/><circle cx="16" cy="16" r="3.4" fill="var(--paper)"/></svg>
+        <p class="tl">Dream · Imagine · Think · Act</p>
+        <h1>DITA</h1>
+        <p><span data-pt>Assista a DITA sonhar, imaginar, pensar e agir sobre os seus dados — e responder sem alucinar.</span>
+           <span data-en>Watch DITA dream, imagine, think and act on your data — answering without hallucinating.</span></p>
+        <div class="splash-cta">
+          <button class="btn btn-accent" data-start><span data-pt>▶ Iniciar demonstração</span><span data-en>▶ Start demo</span></button>
+          <button class="skip" data-skip><span data-pt>pular para o fim</span><span data-en>skip to end</span> ✕</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- S1 · Dream — the pain -->
+    <section class="scene" data-dur="5600" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>A dor</span><span data-en>The pain</span></p>
+        <h2 class="big" data-in="2"><span data-pt>Você tem planilhas. Não tem respostas.</span><span data-en>You have spreadsheets. Not answers.</span></h2>
+        <div class="filechip csv" data-in="3" style="width:fit-content"><span class="x">CSV</span> vendas_2026.csv · 48.210 <span data-pt>linhas</span><span data-en>rows</span></div>
+        <p class="say" data-in="4"><span data-pt>O dado existe — mas a pergunta de negócio continua sem resposta. É aí que a DITA entra.</span><span data-en>The data exists — but the business question stays unanswered. That's where DITA steps in.</span></p>
+      </div>
+      <div class="cap"><span class="av">D</span><span class="txt"><b><span data-pt>Sonhar.</span><span data-en>Dream.</span></b> <span data-pt>A DITA começa entendendo o que você tem em mãos.</span><span data-en>DITA starts by understanding what you have in hand.</span></span></div>
+    </section>
+
+    <!-- S2 · Dream — universal import -->
+    <section class="scene" data-dur="6200" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Importação universal · regra de diamante</span><span data-en>Universal import · the diamond rule</span></p>
+        <div class="cols-2">
+          <div class="merge">
+            <div class="filechip csv" data-in="1"><span class="x">CSV</span></div>
+            <div class="filechip xml" data-in="2"><span class="x">XLSX</span></div>
+            <div class="filechip pdf" data-in="3"><span class="x">PDF</span></div>
+            <div class="filechip doc" data-in="4"><span class="x">JSON</span></div>
+            <div class="filechip" data-in="5"><span class="x" style="background:var(--ink)">API</span></div>
+          </div>
+          <div class="stack" data-in="4">
+            <div class="dataset-dot">◆</div>
+            <p class="say" style="font-size:1rem"><span data-pt>A DITA lê o <b>byte</b>, não a extensão. Qualquer arquivo ou URL vira um dataset único e consultável.</span><span data-en>DITA reads the <b>bytes</b>, not the extension. Any file or URL becomes one queryable dataset.</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">D</span><span class="txt"><span data-pt>Importou um PDF renomeado pra .txt? Tudo bem — o formato é decidido pelos bytes.</span><span data-en>Imported a PDF renamed to .txt? No problem — the format is decided by the bytes.</span></span></div>
+    </section>
+
+    <!-- S3 · Imagine -->
+    <section class="scene" data-dur="6000" data-phase="1">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Imaginar · as perguntas certas</span><span data-en>Imagine · the right questions</span></p>
+        <h2 data-in="2"><span data-pt>Antes de responder, a DITA imagina o que vale perguntar.</span><span data-en>Before answering, DITA imagines what's worth asking.</span></h2>
+        <div class="stack" style="gap:8px">
+          <div class="bubble bot" data-in="3"><span data-pt>Qual região cresceu mais no trimestre?</span><span data-en>Which region grew most this quarter?</span></div>
+          <div class="bubble bot" data-in="4"><span data-pt>Há um produto puxando a queda da margem?</span><span data-en>Is one product dragging the margin down?</span></div>
+          <div class="bubble bot" data-in="5"><span data-pt>Onde está o ponto fora da curva?</span><span data-en>Where is the outlier hiding?</span></div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">D</span><span class="txt"><b><span data-pt>Imaginar.</span><span data-en>Imagine.</span></b> <span data-pt>Ela propõe ângulos que você talvez nem tivesse pensado.</span><span data-en>It surfaces angles you might not have considered.</span></span></div>
+    </section>
+
+    <!-- S4 · Think (secret reasoning) -->
+    <section class="scene" data-dur="6600" data-phase="2">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Pensar · prova interna</span><span data-en>Think · internal proof</span></p>
+        <div class="lockbox" data-in="2">
+          <span class="lk">🔒 <span data-pt>raciocínio reservado</span><span data-en>reasoning kept private</span></span>
+          <div class="think">
+            <div class="step" data-in="2"><span class="n">1</span><span data-pt>Interpreta a pergunta (linguagem natural pt-BR)</span><span data-en>Interprets the question (natural language)</span></div>
+            <div class="step" data-in="3"><span class="n">2</span><span data-pt>Calcula e <b>prova no banco</b> antes de falar</span><span data-en>Computes and <b>proves it in the database</b> before speaking</span></div>
+            <div class="step" data-in="4"><span class="n">3</span><span data-pt>Se não tem certeza, ela pergunta — não chuta</span><span data-en>If unsure, it asks — it never guesses</span></div>
+          </div>
+        </div>
+        <p class="say" data-in="5"><span data-pt>O motor de raciocínio é propriedade intelectual da Tayna. O usuário <b>nunca</b> vê o passo a passo — só o resultado.</span><span data-en>The reasoning engine is Tayna's intellectual property. The user <b>never</b> sees the steps — only the result.</span></p>
+      </div>
+      <div class="cap"><span class="av">D</span><span class="txt"><b><span data-pt>Pensar.</span><span data-en>Think.</span></b> <span data-pt>Cada número é provado no DuckDB — trava anti-alucinação.</span><span data-en>Every number is proven in DuckDB — an anti-hallucination lock.</span></span></div>
+    </section>
+
+    <!-- S5 · Act -->
+    <section class="scene" data-dur="6400" data-phase="3">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Agir · o resultado</span><span data-en>Act · the result</span></p>
+        <div class="cols-2 top">
+          <div class="chat" data-in="2">
+            <div class="bubble user"><span data-pt>Qual região cresceu mais no trimestre?</span><span data-en>Which region grew most this quarter?</span></div>
+            <div class="bubble bot"><span data-pt>A região <b>Sul</b> cresceu <b>+18,4%</b> — o maior salto, puxado por “Serviços”. <br><small class="muted">fonte: vendas_2026.csv</small></span><span data-en>The <b>South</b> region grew <b>+18.4%</b> — the biggest jump, driven by “Services”. <br><small class="muted">source: vendas_2026.csv</small></span></div>
+          </div>
+          <div class="win" data-in="3">
+            <div class="win-bar"><div class="lights"><i></i><i></i><i></i></div><span class="ttl" data-pt>relatório.entrega</span><span class="ttl" data-en>report.delivered</span></div>
+            <div class="win-body">
+              <div class="bars">
+                <div class="bar"><i style="--h:48%;background:#B9AEF2"></i><small>N</small></div>
+                <div class="bar"><i style="--h:62%;background:#B9AEF2"></i><small>NE</small></div>
+                <div class="bar"><i style="--h:55%;background:#B9AEF2"></i><small>CO</small></div>
+                <div class="bar"><i style="--h:70%;background:#B9AEF2"></i><small>SE</small></div>
+                <div class="bar"><i style="--h:96%"></i><small>S</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">D</span><span class="txt"><b><span data-pt>Agir.</span><span data-en>Act.</span></b> <span data-pt>Resposta + gráfico, prontos pra entregar. Roda como app de desktop (DITA.exe).</span><span data-en>Answer + chart, ready to deliver. Ships as a desktop app (DITA.exe).</span></span></div>
+    </section>
+
+    <!-- S6 · End -->
+    <section class="scene" data-dur="9000" data-phase="3">
+      <div class="scene-inner endcard center-col">
+        <p class="scene-kicker" data-in="1">DITA</p>
+        <h2 class="big" data-in="2" style="margin-inline:auto"><span data-pt>Dos dados crus à decisão — sem alucinar.</span><span data-en>From raw data to decision — without hallucinating.</span></h2>
+        <p class="say" data-in="3" style="margin-inline:auto"><span data-pt>Importação universal, raciocínio provado no banco e entrega em 4 pilares. Monorepo TypeScript + DuckDB, empacotado em Electron.</span><span data-en>Universal import, database-proven reasoning and delivery in 4 pillars. TypeScript monorepo + DuckDB, packaged with Electron.</span></p>
+        <div class="row" data-in="4">
+          <a class="btn btn-accent" href="../index.html#work"><span data-pt>Ver outros projetos</span><span data-en>See other projects</span> →</a>
+          <button class="btn btn-ghost" data-restart><span data-pt>↺ Repetir</span><span data-en>↺ Replay</span></button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="cbtns">
+    <button class="cbtn" data-restart aria-label="Restart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></button>
+    <button class="cbtn" data-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 6 8 12l6 6z"/></svg></button>
+  </div>
+  <button class="cbtn play" data-play aria-label="Play"></button>
+  <div class="cbtns">
+    <button class="cbtn" data-next aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m10 6 6 6-6 6z"/></svg></button>
+  </div>
+  <div class="rail" id="rail"></div>
+  <span class="cstep" id="cstep"></span>
+</div>
+
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/demo.js"></script>
+</body>
+</html>

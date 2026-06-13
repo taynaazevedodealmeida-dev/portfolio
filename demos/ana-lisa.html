@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/demo.css">
+<body class="demo-body" style="--accent:#2F7DD9;--accent-ink:#1E5BA8" data-title-pt="Ana & Lisa — demonstração" data-title-en="Ana & Lisa — demo">
+
+<div class="dbar">
+  <a class="back" href="../index.html#work">← <span data-pt>Portfólio</span><span data-en>Portfolio</span></a>
+  <div class="who"><span class="dot"></span>Ana &amp; Lisa <small data-pt>análise de seguros</small><small data-en>insurance analysis</small></div>
+  <div class="lang" role="group" aria-label="Language"><button data-lang-btn="pt" class="on">PT</button><button data-lang-btn="en">EN</button></div>
+</div>
+
+<div class="stage-shell">
+  <div class="phases">
+    <span class="phase"><span data-pt>Apólice</span><span data-en>Policy</span></span>
+    <span class="phase"><span data-pt>Extrai</span><span data-en>Extract</span></span>
+    <span class="phase"><span data-pt>Analisa</span><span data-en>Analyze</span></span>
+    <span class="phase"><span data-pt>Laudo</span><span data-en>Report</span></span>
+  </div>
+  <div class="stage">
+    <div class="splash" id="splash">
+      <div class="splash-in">
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+        <p class="tl" data-pt>SaaS vertical · Seguros</p><p class="tl" data-en>Vertical SaaS · Insurance</p>
+        <h1>Ana &amp; Lisa</h1>
+        <p><span data-pt>Lê uma apólice de seguro e aponta risco, fraude e prazos — cada alerta com a base legal citada.</span><span data-en>Reads an insurance policy and flags risk, fraud and deadlines — each alert with its legal basis cited.</span></p>
+        <div class="splash-cta">
+          <button class="btn btn-accent" data-start><span data-pt>▶ Iniciar demonstração</span><span data-en>▶ Start demo</span></button>
+          <button class="skip" data-skip><span data-pt>pular para o fim</span><span data-en>skip to end</span> ✕</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- S1 pain -->
+    <section class="scene" data-dur="5400" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>A dor</span><span data-en>The pain</span></p>
+        <h2 class="big" data-in="2"><span data-pt>O risco que importa se esconde na letra miúda.</span><span data-en>The risk that matters hides in the fine print.</span></h2>
+        <p class="say" data-in="3"><span data-pt>Ler uma apólice inteira leva horas. Um prazo perdido ou uma cláusula abusiva custa caro depois.</span><span data-en>Reading a full policy takes hours. A missed deadline or an abusive clause is costly later.</span></p>
+      </div>
+      <div class="cap"><span class="av">A</span><span class="txt"><span data-pt>Ana &amp; Lisa fazem a leitura técnica em segundos.</span><span data-en>Ana &amp; Lisa do the technical reading in seconds.</span></span></div>
+    </section>
+
+    <!-- S2 extract -->
+    <section class="scene" data-dur="6200" data-phase="1">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Leitura do documento (amostra sintética)</span><span data-en>Document reading (synthetic sample)</span></p>
+        <div class="cols-2 top">
+          <div class="filechip pdf" data-in="2" style="width:fit-content"><span class="x">PDF</span> apolice_exemplo.pdf</div>
+          <div class="kv" data-in="3">
+            <div class="row"><span data-pt>Apólice</span><span data-en>Policy</span><span>EX-RCG-2026-000.000</span></div>
+            <div class="row"><span data-pt>Seguradora</span><span data-en>Insurer</span><span>Exemplo Seguros S.A.</span></div>
+            <div class="row"><span data-pt>Segurado</span><span data-en>Insured</span><span>Empresa Exemplo Ltda.</span></div>
+            <div class="row"><span data-pt>Vigência</span><span data-en>Term</span><span>01/07/26 → 30/06/27</span></div>
+            <div class="row"><span data-pt>Prêmio</span><span data-en>Premium</span><span>R$ 10.200,44</span></div>
+            <div class="row"><span data-pt>Limite</span><span data-en>Limit</span><span>R$ 1.000.000</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">A</span><span class="txt"><b><span data-pt>Extrai.</span><span data-en>Extract.</span></b> <span data-pt>Extrator de DOCX/PDF: 2 passadas, rótulo→valor, prêmio por prioridade.</span><span data-en>DOCX/PDF extractor: 2 passes, label→value, premium by priority.</span></span></div>
+    </section>
+
+    <!-- S3 analyze -->
+    <section class="scene" data-dur="7200" data-phase="2">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>5 camadas de regras auditáveis</span><span data-en>5 layers of audited rules</span></p>
+        <div class="stack">
+          <div class="flag bad" data-in="2"><span class="ic">⚑</span><span class="b"><b data-pt>Aviso de sinistro: prazo de 30 dias</b><b data-en>Claim notice: 30-day window</b><small data-pt>perda do direito de recusa após 120 dias</small><small data-en>insurer loses refusal right after 120 days</small></span><span class="base">Lei 15.040/2024</span></div>
+          <div class="flag warn" data-in="3"><span class="ic">§</span><span class="b"><b data-pt>Cláusula restringe reembolso</b><b data-en>Clause restricts reimbursement</b><small data-pt>possível abusividade ao consumidor</small><small data-en>possibly abusive to the consumer</small></span><span class="base">CDC art. 51</span></div>
+          <div class="flag warn" data-in="4"><span class="ic">🔍</span><span class="b"><b data-pt>Indício de fraude: vigência retroativa</b><b data-en>Fraud signal: backdated term</b><small data-pt>score de fraude → investigar</small><small data-en>fraud score → investigate</small></span><span class="base">FRD-003</span></div>
+          <div class="flag good" data-in="5"><span class="ic">✓</span><span class="b"><b data-pt>Limite cobre o objeto segurado</b><b data-en>Limit covers the insured object</b></span><span class="base">CC art. 757</span></div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">A</span><span class="txt"><b><span data-pt>Analisa.</span><span data-en>Analyze.</span></b> <span data-pt>Seguro · Jurídico · Prazos · Fraude · Documentos — regra pura, sem alucinação.</span><span data-en>Insurance · Legal · Deadlines · Fraud · Documents — pure rules, no hallucination.</span></span></div>
+    </section>
+
+    <!-- S4 report -->
+    <section class="scene" data-dur="6600" data-phase="3">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>O laudo</span><span data-en>The report</span></p>
+        <div class="cols-2">
+          <div style="display:grid;place-items:center" data-in="2">
+            <div class="gauge" style="--p:72;--gc:#E2A33A"><span class="val">72</span><span class="lbl" data-pt>risco</span><span class="lbl" data-en>risk</span></div>
+          </div>
+          <div class="stack" data-in="3">
+            <p class="say" style="font-size:1rem"><span data-pt><b>Risco médio.</b> 2 prazos críticos, 1 cláusula a renegociar, 1 alerta de fraude para investigar.</span><span data-en><b>Medium risk.</b> 2 critical deadlines, 1 clause to renegotiate, 1 fraud alert to investigate.</span></p>
+            <div class="flag good" data-in="4"><span class="ic">+</span><span class="b"><b data-pt>Ponte de IA opcional</b><b data-en>Optional AI bridge</b><small data-pt>o cliente pluga a própria IA — desligada por padrão</small><small data-en>client plugs in their own AI — off by default</small></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">A</span><span class="txt"><b><span data-pt>Laudo.</span><span data-en>Report.</span></b> <span data-pt>A IA aponta; a pessoa decide. Auditável de ponta a ponta.</span><span data-en>The AI flags; the person decides. Auditable end to end.</span></span></div>
+    </section>
+
+    <!-- end -->
+    <section class="scene" data-dur="9000" data-phase="3">
+      <div class="scene-inner endcard center-col">
+        <p class="scene-kicker" data-in="1">Ana &amp; Lisa</p>
+        <h2 class="big" data-in="2" style="margin-inline:auto"><span data-pt>Análise de seguros com base legal — em segundos.</span><span data-en>Insurance analysis with legal grounding — in seconds.</span></h2>
+        <p class="say" data-in="3" style="margin-inline:auto"><span data-pt>FastAPI + janela nativa (pywebview), app desktop instalável (.exe). Validado contra apólice real.</span><span data-en>FastAPI + native window (pywebview), installable desktop app (.exe). Validated against a real policy.</span></p>
+        <div class="row" data-in="4">
+          <a class="btn btn-accent" href="../index.html#work"><span data-pt>Ver outros projetos</span><span data-en>See other projects</span> →</a>
+          <button class="btn btn-ghost" data-restart><span data-pt>↺ Repetir</span><span data-en>↺ Replay</span></button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="cbtns">
+    <button class="cbtn" data-restart aria-label="Restart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></button>
+    <button class="cbtn" data-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 6 8 12l6 6z"/></svg></button>
+  </div>
+  <button class="cbtn play" data-play aria-label="Play"></button>
+  <div class="cbtns"><button class="cbtn" data-next aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m10 6 6 6-6 6z"/></svg></button></div>
+  <div class="rail" id="rail"></div>
+  <span class="cstep" id="cstep"></span>
+</div>
+
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/demo.js"></script>
+</body>
+</html>

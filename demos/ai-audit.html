@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/demo.css">
+<style>
+  .q{ border:1px solid var(--line); border-radius:14px; padding:14px 16px; background:var(--card); }
+  .q .opt{ display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+  .q .opt span{ border:1px solid var(--line); border-radius:100px; padding:.32em .8em; font-size:.82rem; }
+  .q .opt span.sel{ background:var(--accent); color:#fff; border-color:transparent; }
+</style>
+<body class="demo-body" style="--accent:#5A43E0;--accent-ink:#3A29A8" data-title-pt="AI Audit — demonstração" data-title-en="AI Audit — demo">
+
+<div class="dbar">
+  <a class="back" href="../index.html#work">← <span data-pt>Portfólio</span><span data-en>Portfolio</span></a>
+  <div class="who"><span class="dot"></span>AI Audit <small data-pt>diagnóstico de maturidade · LIVE</small><small data-en>maturity diagnostic · LIVE</small></div>
+  <div class="lang" role="group" aria-label="Language"><button data-lang-btn="pt" class="on">PT</button><button data-lang-btn="en">EN</button></div>
+</div>
+
+<div class="stage-shell">
+  <div class="phases">
+    <span class="phase">Quiz</span>
+    <span class="phase"><span data-pt>Pontua</span><span data-en>Score</span></span>
+    <span class="phase"><span data-pt>Oportunidades</span><span data-en>Opportunities</span></span>
+    <span class="phase">Lead</span>
+  </div>
+  <div class="stage">
+    <div class="splash" id="splash">
+      <div class="splash-in">
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 12 16 8M12 12v-5"/></svg>
+        <p class="tl" data-pt>No-code · funil de leads</p><p class="tl" data-en>No-code · lead funnel</p>
+        <h1>AI Audit</h1>
+        <p><span data-pt>Diagnostica a maturidade em IA de uma PME: um score de 0 a 100 e as 3 maiores oportunidades.</span><span data-en>Diagnoses an SMB's AI maturity: a 0–100 score and the top 3 opportunities.</span></p>
+        <div class="splash-cta">
+          <button class="btn btn-accent" data-start><span data-pt>▶ Iniciar demonstração</span><span data-en>▶ Start demo</span></button>
+          <button class="skip" data-skip><span data-pt>pular para o fim</span><span data-en>skip to end</span> ✕</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="scene" data-dur="5200" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>A dor</span><span data-en>The pain</span></p>
+        <h2 class="big" data-in="2"><span data-pt>“Sei que IA ajuda — mas não sei por onde começar.”</span><span data-en>“I know AI helps — I just don't know where to start.”</span></h2>
+        <p class="say" data-in="3"><span data-pt>A paralisia da PME diante da IA. O AI Audit transforma essa dúvida em um plano.</span><span data-en>The SMB's paralysis in front of AI. AI Audit turns that doubt into a plan.</span></p>
+      </div>
+      <div class="cap"><span class="av">A</span><span class="txt"><span data-pt>Roda 100% no navegador — sem servidor, sem instalação.</span><span data-en>Runs 100% in the browser — no server, no install.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6000" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>O questionário</span><span data-en>The questionnaire</span></p>
+        <div class="stack">
+          <div class="q" data-in="2"><b data-pt>Você organiza dados em planilhas manuais?</b><b data-en>Do you organize data in manual spreadsheets?</b><div class="opt"><span class="sel" data-pt>Sempre</span><span class="sel" data-en>Always</span><span data-pt>Às vezes</span><span data-en>Sometimes</span><span data-pt>Nunca</span><span data-en>Never</span></div></div>
+          <div class="q" data-in="3"><b data-pt>Quanto tempo gasta respondendo as mesmas perguntas?</b><b data-en>How long do you spend answering the same questions?</b><div class="opt"><span data-pt>Pouco</span><span data-en>Little</span><span class="sel" data-pt>Muito</span><span class="sel" data-en>A lot</span></div></div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">A</span><span class="txt"><span data-pt>Poucas perguntas, linguagem de dono de negócio.</span><span data-en>A few questions, in business-owner language.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6000" data-phase="1">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>O score de maturidade</span><span data-en>The maturity score</span></p>
+        <div style="display:grid;place-items:center" data-in="2">
+          <div class="gauge" style="--p:58;--gc:#5A43E0"><span class="val">58</span><span class="lbl" data-pt>maturidade</span><span class="lbl" data-en>maturity</span></div>
+        </div>
+        <p class="say" style="text-align:center;margin-inline:auto" data-in="3"><span data-pt>Nível <b>intermediário</b>: há ganho rápido em automação à vista.</span><span data-en><b>Intermediate</b> level: there's quick automation gain in sight.</span></p>
+      </div>
+      <div class="cap"><span class="av">A</span><span class="txt"><b><span data-pt>Pontua.</span><span data-en>Score.</span></b> <span data-pt>Medidor circular com gradiente cônico — feito em CSS puro.</span><span data-en>Conic-gradient gauge — built in pure CSS.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6600" data-phase="2">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>As 3 maiores oportunidades</span><span data-en>The top 3 opportunities</span></p>
+        <div class="stack">
+          <div class="flag good" data-in="2"><span class="ic">1</span><span class="b"><b data-pt>Atendimento automático no WhatsApp</b><b data-en>Automated WhatsApp support</b><small data-pt>captura leads fora do horário</small><small data-en>captures leads after hours</small></span></div>
+          <div class="flag good" data-in="3"><span class="ic">2</span><span class="b"><b data-pt>Organização fiscal automatizada</b><b data-en>Automated fiscal organization</b><small data-pt>menos retrabalho de nota</small><small data-en>less invoice rework</small></span></div>
+          <div class="flag good" data-in="4"><span class="ic">3</span><span class="b"><b data-pt>Relatórios que se geram sozinhos</b><b data-en>Self-generating reports</b></span></div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">A</span><span class="txt"><b><span data-pt>Oportunidades.</span><span data-en>Opportunities.</span></b> <span data-pt>Recomendações conectadas aos meus outros produtos.</span><span data-en>Recommendations wired to my other products.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="5800" data-phase="3">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Captura de lead</span><span data-en>Lead capture</span></p>
+        <div class="cols-2 top">
+          <div class="bubble bot" data-in="2" style="max-width:100%"><span data-pt>Quer o plano completo? Deixe seu WhatsApp e receba o diagnóstico detalhado.</span><span data-en>Want the full plan? Drop your WhatsApp and get the detailed diagnosis.</span></div>
+          <div class="kv" data-in="3">
+            <div class="row"><span>WhatsApp</span><span>✓</span></div>
+            <div class="row"><span data-pt>Painel admin</span><span data-en>Admin panel</span><span>?admin=1</span></div>
+            <div class="row"><span data-pt>Custo de infra</span><span data-en>Infra cost</span><span>R$ 0</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">A</span><span class="txt"><b>Lead.</b> <span data-pt>É a porta de entrada: quem termina o quiz vira lead qualificado.</span><span data-en>It's the front door: whoever finishes the quiz becomes a qualified lead.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="9000" data-phase="3">
+      <div class="scene-inner endcard center-col">
+        <p class="scene-kicker" data-in="1">AI Audit · <span data-pt>no ar</span><span data-en>live</span></p>
+        <h2 class="big" data-in="2" style="margin-inline:auto"><span data-pt>Da paralisia ao plano — em 2 minutos, sem custo.</span><span data-en>From paralysis to a plan — in 2 minutes, at no cost.</span></h2>
+        <p class="say" data-in="3" style="margin-inline:auto"><span data-pt>Página única, HTML/CSS/JS puro, zero dependências. Publicado no GitHub Pages.</span><span data-en>Single page, pure HTML/CSS/JS, zero dependencies. Published on GitHub Pages.</span></p>
+        <div class="row" data-in="4">
+          <a class="btn btn-accent" href="https://taynaazevedodealmeida-dev.github.io/ai-audit/" target="_blank" rel="noopener"><span data-pt>Abrir o app ao vivo</span><span data-en>Open the live app</span> ↗</a>
+          <a class="btn btn-ghost" href="../index.html#work"><span data-pt>Ver outros projetos</span><span data-en>Other projects</span> →</a>
+          <button class="btn btn-ghost" data-restart>↺</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="cbtns">
+    <button class="cbtn" data-restart aria-label="Restart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></button>
+    <button class="cbtn" data-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 6 8 12l6 6z"/></svg></button>
+  </div>
+  <button class="cbtn play" data-play aria-label="Play"></button>
+  <div class="cbtns"><button class="cbtn" data-next aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m10 6 6 6-6 6z"/></svg></button></div>
+  <div class="rail" id="rail"></div>
+  <span class="cstep" id="cstep"></span>
+</div>
+
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/demo.js"></script>
+</body>
+</html>

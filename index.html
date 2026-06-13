@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Tayna Azevedo — Consultora de IA & Especialista em Desenvolvimento de Produtos. Investigo dores de mercado e construo produtos de IA que resolvem.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<style>
+  /* ----- card preview visuals (hub only) ----- */
+  .pv{ position:absolute; inset:0; background:
+        radial-gradient(120% 90% at 85% -10%, color-mix(in srgb,var(--accent) 20%,transparent), transparent 60%),
+        var(--paper-2); overflow:hidden; }
+  .pv-grid{ position:absolute; inset:0; background-image:
+        linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);
+        background-size:24px 24px; opacity:.6; mask-image:linear-gradient(180deg,#000,transparent); }
+  .pv-glyph{ position:absolute; right:-6px; bottom:-22px; font-family:var(--serif); font-weight:600;
+        font-size:130px; line-height:1; color:color-mix(in srgb,var(--accent) 26%,transparent); letter-spacing:-.05em; user-select:none; }
+  .pv-chip{ position:absolute; background:var(--card); border:1px solid var(--line); border-radius:9px;
+        box-shadow:var(--sh-1); font-family:var(--mono); font-size:.66rem; color:var(--ink-soft);
+        padding:.42em .6em; display:flex; align-items:center; gap:.4em; transition:transform .6s var(--ease-out); }
+  .pv-chip .d{ width:7px; height:7px; border-radius:50%; background:var(--accent); }
+  .pv-chip.a{ top:22px; left:22px; } .pv-chip.b{ top:60px; left:46px; } .pv-chip.c{ top:30px; right:30px; }
+  .pcard:hover .pv-chip.a{ transform:translateY(-4px); } .pcard:hover .pv-chip.b{ transform:translate(6px,-2px); }
+  .pcard:hover .pv-chip.c{ transform:translateY(5px); }
+  .pv-spark{ position:absolute; left:22px; bottom:20px; display:flex; gap:5px; align-items:flex-end; height:42px; }
+  .pv-spark i{ width:7px; background:var(--accent); border-radius:3px; opacity:.85; animation:eq 1.6s var(--ease) infinite; }
+  .pv-spark i:nth-child(2){ animation-delay:.2s } .pv-spark i:nth-child(3){ animation-delay:.4s } .pv-spark i:nth-child(4){ animation-delay:.6s } .pv-spark i:nth-child(5){ animation-delay:.8s }
+  .pcard:hover .pv-spark i{ animation-play-state:running; } .pv-spark i{ animation-play-state:paused; height:40%; }
+  @keyframes eq{ 0%,100%{ height:30% } 50%{ height:95% } }
+  .pv-orbit{ position:absolute; inset:0; }
+  .pv-orbit .core{ position:absolute; top:50%; left:50%; width:34px; height:34px; border-radius:50%;
+        transform:translate(-50%,-50%); background:var(--accent); box-shadow:0 0 0 6px color-mix(in srgb,var(--accent) 18%,transparent); }
+  .about-grid{ display:grid; grid-template-columns:1.15fr .85fr; gap:clamp(30px,5vw,70px); align-items:center; }
+  .portrait{ aspect-ratio:4/5; border-radius:var(--r-lg); background:
+        radial-gradient(130% 100% at 20% 0%, color-mix(in srgb,var(--accent) 28%,transparent), transparent 55%),
+        linear-gradient(160deg,var(--paper-3),var(--paper-2)); border:1px solid var(--line);
+        position:relative; overflow:hidden; box-shadow:var(--sh-2); display:grid; place-items:center; }
+  .portrait .mono-init{ font-family:var(--serif); font-size:clamp(5rem,12vw,9rem); color:color-mix(in srgb,var(--accent) 70%,var(--ink)); letter-spacing:-.04em; }
+  .portrait .ring{ position:absolute; border-radius:50%; border:1px solid color-mix(in srgb,var(--accent) 40%,transparent); }
+  .portrait .ring.r1{ inset:14%; } .portrait .ring.r2{ inset:26%; } .portrait .ring.r3{ inset:38%; }
+  .quote{ font-family:var(--serif); font-size:clamp(1.4rem,2.6vw,2rem); line-height:1.3; letter-spacing:-.02em; }
+  @media (max-width:900px){ .about-grid{ grid-template-columns:1fr; } }
+</style>
+<body data-title-pt="Tayna Azevedo · Consultora de IA & Produtos" data-title-en="Tayna Azevedo · AI Consultant & Product">
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <circle cx="16" cy="16" r="14" stroke="var(--accent)" stroke-width="1.4" opacity=".4"/>
+        <path d="M16 3 C9 11 9 21 16 29 C23 21 23 11 16 3Z" fill="var(--accent)" opacity=".85"/>
+        <circle cx="16" cy="16" r="3.4" fill="var(--paper)"/>
+      </svg>
+      <span>Tayna&nbsp;Azevedo</span>
+    </a>
+    <div class="nav-links">
+      <a href="#method"><span data-pt>Método</span><span data-en>Method</span></a>
+      <a href="#work"><span data-pt>Projetos</span><span data-en>Work</span></a>
+      <a href="#skills"><span data-pt>Habilidades</span><span data-en>Skills</span></a>
+      <a href="#about"><span data-pt>Sobre</span><span data-en>About</span></a>
+    </div>
+    <div class="nav-actions">
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang-btn="pt" class="on">PT</button>
+        <button data-lang-btn="en">EN</button>
+      </div>
+      <a class="btn btn-primary" href="#contact" style="padding:.62em 1.1em;font-size:.88rem">
+        <span data-pt>Contato</span><span data-en>Contact</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<span id="top"></span>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-aura"></div><div class="hero-aura b"></div>
+  <div class="wrap">
+    <p class="eyebrow hero-tag" data-reveal>
+      <span data-pt>Consultora de IA · Especialista em Produtos</span>
+      <span data-en>AI Consultant · Product Development Specialist</span>
+    </p>
+    <h1 class="display" data-reveal data-delay="1">
+      <span data-pt>Transformo <em class="ink2">dores de mercado</em> em produtos de IA que resolvem.</span>
+      <span data-en>I turn <em class="ink2">market pain</em> into AI products that solve it.</span>
+    </h1>
+    <p class="lead" data-reveal data-delay="2">
+      <span data-pt>Investigo onde a IA agrega valor real, prototipo a solução e entrego software de verdade — do diagnóstico ao produto no ar. Tudo construído com Claude&nbsp;Code, no-code e LLMs.</span>
+      <span data-en>I find where AI adds real value, prototype the solution and ship actual software — from diagnosis to a live product. All built with Claude&nbsp;Code, no-code and LLMs.</span>
+    </p>
+    <div class="hero-cta" data-reveal data-delay="3">
+      <a class="btn btn-primary" href="#work">
+        <span data-pt>Ver demonstrações</span><span data-en>Watch the demos</span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="btn btn-ghost" href="#contact">
+        <span data-pt>Vamos conversar</span><span data-en>Let's talk</span>
+      </a>
+    </div>
+
+    <div class="stats" data-reveal data-delay="4">
+      <div class="stat"><div class="n">17</div><div class="l"><span data-pt>produtos de IA construídos & idealizados</span><span data-en>AI products built &amp; conceived</span></div></div>
+      <div class="stat"><div class="n">4</div><div class="l"><span data-pt>setores B2B com software vertical</span><span data-en>B2B sectors with vertical software</span></div></div>
+      <div class="stat"><div class="n">0→1</div><div class="l"><span data-pt>da dor à entrega, sozinha</span><span data-en>from pain to delivery, end-to-end</span></div></div>
+    </div>
+  </div>
+
+  <div class="role-marquee" data-reveal>
+    <div class="role-track">
+      <span>Product Manager <i></i> Creative AI Engineer <i></i> AI Product Builder <i></i> No-Code Builder <i></i> Digital Product Creator <i></i> AI Prototyper <i></i></span>
+      <span>Product Manager <i></i> Creative AI Engineer <i></i> AI Product Builder <i></i> No-Code Builder <i></i> Digital Product Creator <i></i> AI Prototyper <i></i></span>
+    </div>
+  </div>
+</header>
+
+<!-- METHOD -->
+<section class="section" id="method">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow"><span data-pt>Como eu trabalho</span><span data-en>How I work</span></p>
+      <h2 class="h-xl" style="margin-top:18px">
+        <span data-pt>Um método repetível: da dor real ao produto que entrega valor.</span>
+        <span data-en>A repeatable method: from real pain to a product that delivers value.</span>
+      </h2>
+    </div>
+    <div class="method">
+      <article class="mcard" data-reveal>
+        <span class="step">01</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <h3><span data-pt>Investigar a dor</span><span data-en>Investigate the pain</span></h3>
+        <p><span data-pt>Escuto a área, mapeio o gargalo e separo o que dói de verdade do que só parece urgente.</span><span data-en>I listen to the team, map the bottleneck and separate real pain from what only looks urgent.</span></p>
+      </article>
+      <article class="mcard" data-reveal data-delay="1">
+        <span class="step">02</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v2M12 19v2M3 12h2M19 12h2M6 6l1.5 1.5M16.5 16.5 18 18"/><circle cx="12" cy="12" r="4"/></svg>
+        <h3><span data-pt>Diagnosticar a IA</span><span data-en>Diagnose where AI fits</span></h3>
+        <p><span data-pt>Decido onde e como a IA agrega valor — e onde regra simples resolve melhor que modelo.</span><span data-en>I decide where and how AI adds value — and where a plain rule beats a model.</span></p>
+      </article>
+      <article class="mcard" data-reveal data-delay="2">
+        <span class="step">03</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m8 18-5-6 5-6M16 6l5 6-5 6"/></svg>
+        <h3><span data-pt>Prototipar com IA</span><span data-en>Prototype with AI</span></h3>
+        <p><span data-pt>Construo o produto com Claude Code, no-code e LLMs — prompts afiados, ciclos curtos.</span><span data-en>I build with Claude Code, no-code and LLMs — sharp prompts, short cycles.</span></p>
+      </article>
+      <article class="mcard" data-reveal data-delay="3">
+        <span class="step">04</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 13l4 4L19 7"/><path d="M3 19h18" opacity=".4"/></svg>
+        <h3><span data-pt>Entregar & medir</span><span data-en>Ship &amp; measure</span></h3>
+        <p><span data-pt>Coloco no ar, valido com casos reais e torno a área mais eficiente e produtiva.</span><span data-en>I ship it, validate with real cases and make the team faster and more productive.</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="section alt" id="work">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow"><span data-pt>Portfólio · demonstrações ao vivo</span><span data-en>Portfolio · live demos</span></p>
+      <h2 class="h-xl" style="margin-top:18px">
+        <span data-pt>Cada projeto tem uma demo cinematográfica.</span>
+        <span data-en>Every project has a cinematic demo.</span>
+      </h2>
+      <p class="lead">
+        <span data-pt>Aperte o play e assista o produto trabalhar — a dor, a entrada, a IA pensando e o resultado. Sem expor dados: tudo com amostras sintéticas.</span>
+        <span data-en>Hit play and watch the product work — the pain, the input, the AI thinking and the result. No real data exposed: everything uses synthetic samples.</span>
+      </p>
+    </div>
+
+    <div class="proj-filters" data-reveal>
+      <button class="chip on" data-filter="all"><span data-pt>Todos</span><span data-en>All</span></button>
+      <button class="chip" data-filter="flagship"><span data-pt>Carros-chefe</span><span data-en>Flagships</span></button>
+      <button class="chip" data-filter="b2b"><span data-pt>SaaS vertical B2B</span><span data-en>Vertical B2B SaaS</span></button>
+      <button class="chip" data-filter="ai"><span data-pt>IA aplicada</span><span data-en>Applied AI</span></button>
+      <button class="chip" data-filter="nocode"><span data-pt>No-code / Web</span><span data-en>No-code / Web</span></button>
+    </div>
+
+    <div class="proj-grid">
+
+      <!-- DITA -->
+      <a class="pcard wide" data-cat="flagship" href="demos/dita.html" style="--accent:#5A43E0" data-reveal>
+        <div class="pcard-canvas"><div class="pv"><div class="pv-grid"></div>
+          <div class="pv-orbit"><div class="core"></div></div>
+          <div class="pv-chip a"><span class="d"></span>Dream</div>
+          <div class="pv-chip b"><span class="d"></span>Think</div>
+          <div class="pv-chip c"><span class="d"></span>Act</div>
+          <div class="pv-glyph">D</div></div>
+        </div>
+        <div class="pcard-body">
+          <span class="kicker">Flagship · Data Intelligence</span>
+          <h3>DITA</h3>
+          <p><span data-pt>Inteligência de dados que sonha, imagina, pensa e age sobre os seus dados — e responde sem alucinar.</span><span data-en>Data intelligence that dreams, imagines, thinks and acts on your data — answering without hallucinating.</span></p>
+          <div class="pcard-foot">
+            <div class="pcard-tags"><span class="tag hot">LLM</span><span class="tag">DuckDB</span><span class="tag">Electron</span></div>
+            <span class="play-link"><span data-pt>Demo</span><span data-en>Demo</span><span class="dot">▶</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- SYNTHIA -->
+      <a class="pcard wide" data-cat="flagship" href="demos/synthia-cfo.html" style="--accent:#1F9C7C" data-reveal data-delay="1">
+        <div class="pcard-canvas"><div class="pv"><div class="pv-grid"></div>
+          <div class="pv-spark"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="pv-chip a"><span class="d"></span>DRE</div>
+          <div class="pv-chip c"><span class="d"></span>24/7</div>
+          <div class="pv-glyph">$</div></div>
+        </div>
+        <div class="pcard-body">
+          <span class="kicker">Flagship · Autonomous Agent</span>
+          <h3>Synthia CFO</h3>
+          <p><span data-pt>CFO autônomo com Computer Use: gera DRE, balanço e fluxo de caixa e concilia — 24 horas por dia.</span><span data-en>Autonomous CFO with Computer Use: builds P&amp;L, balance sheet and cash flow and reconciles — around the clock.</span></p>
+          <div class="pcard-foot">
+            <div class="pcard-tags"><span class="tag hot">Computer Use</span><span class="tag">Finance</span><span class="tag">Agent</span></div>
+            <span class="play-link"><span data-pt>Demo</span><span data-en>Demo</span><span class="dot">▶</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- CREAITIVITY -->
+      <a class="pcard" data-cat="flagship" href="demos/creaitivity.html" style="--accent:#D9712F" data-reveal>
+        <div class="pcard-canvas"><div class="pv"><div class="pv-grid"></div>
+          <div class="pv-chip a"><span class="d"></span>1 · 2 · 3</div>
+          <div class="pv-chip c"><span class="d"></span>BYOAI</div>
+          <div class="pv-glyph">7</div></div>
+        </div>
+        <div class="pcard-body">
+          <span class="kicker">Flagship · Creative SaaS</span>
+          <h3>Creaitivity</h3>
+          <p><span data-pt>IA criativa que pensa com você em 7 etapas visíveis. SaaS BYOAI — cada um usa a própria chave.</span><span data-en>Creative AI that thinks with you across 7 visible steps. BYOAI SaaS — bring your own key.</span></p>
+          <div class="pcard-foot">
+            <div class="pcard-tags"><span class="tag hot">Reasoning</span><span class="tag">SaaS</span></div>
+            <span class="play-link"><span class="dot">▶</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- NEXUSAI -->
+      <a class="pcard" data-cat="flagship" href="demos/nexusai.html" style="--accent:#2F5BD9" data-reveal data-delay="1">
+        <div class="pcard-canvas"><div class="pv"><div class="pv-grid"></div>
+          <div class="pv-chip a"><span class="d"></span>CEO</div>
+          <div class="pv-chip b"><span class="d"></span>CFO</div>
+          <div class="pv-chip c"><span class="d"></span>CMO</div>
+          <div class="pv-glyph">6</div></div>
+        </div>
+        <div class="pcard-body">
+          <span class="kicker">Flagship · Multi-agent</span>
+          <h3>NexusAI ERP</h3>
+          <p><span data-pt>6 agentes executivos (CEO·CFO·CMO·COO·CLO·CCO) operando um e-commerce sozinhos, 24/7.</span><span data-en>6 executive AI agents (CEO·CFO·CMO·COO·CLO·CCO) running an e-commerce on their own, 24/7.</span></p>
+          <div class="pcard-foot">
+            <div class="pcard-tags"><span class="tag hot">CrewAI</span><span class="tag">E-commerce</span></div>
+            <span class="play-link"><span class="dot">▶</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ANA & LISA -->
+      <a class="pcard" data-cat="b2b" href="demos/ana-lisa.html" style="--accent:#2F7DD9" data-reveal>
+        <div class="pcard-canvas"><div class="pv"><div class="pv-grid"></div>
+          <div class="pv-chip a"><span class="d"></span>Apólice</div>
+          <div class="pv-chip c"><span class="d"></span>Risco</div>
+          <div class="pv-glyph">⚖</div></div>
+        </div>
+        <div class="pcard-body">
+          <span class="kicker">B2B Vertical · Seguros</span>
+          <h3>Ana &amp; Lisa</h3>
+          <p><span data-pt>Analisa apólices de seguro: risco, fraude e prazos com base na Lei 15.040/2024.</span><span data-en>Analyzes insurance policies: risk, fraud and deadlines grounded in Brazil's new insurance law.</span></p>
+          <div class="pcard-foot">
+            <div class="pcard-tags"><span class="tag">FastAPI</span><span class="tag">Desktop</span></div>
+            <span class="play-link"><span class="dot">▶</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- CONTA CERTA -->
+      <a class="pcard" data-cat="b2b" href="demos/conta-certa.html" style="--accent:#16976A" data-reveal data-delay="1">
+        <div class="pcard-canvas"><div class="pv"><div class="pv-grid"></div>
+          <div class="pv-chip a"><span class="d"></span>NF-e</div>
+          <div class="pv-chip c"><span class="d"></span>XML</div>
+          <div class="pv-glyph">NF</div></div>
+        </div>
+        <div class="pcard-body">
+          <span class="kicker">B2B Vertical · Fiscal</span>
+          <h3>Conta Certa</h3>
+          <p><span data-pt>Lê notas fiscais eletrônicas (NF-e) e aponta risco fiscal com base legal citada.</span><span data-en>Reads electronic invoices (NF-e) and flags fiscal risk with cited legal basis.</span></p>
+          <div class="pcard-foot">
+            <div class="pcard-tags"><span class="tag">NF-e</span><span class="tag">Desktop</span></div>
+            <span class="play-link"><span class="dot">▶</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- DRA CLAUSULA -->
+      <a class="pcard" data-cat="b2b" href="demos/dra-clausula.html" style="--accent:#7A4FD0" data-reveal data-delay="2">
+        <div class="pcard-canvas"><div class="pv"><div class="pv-grid"></div>
+          <div class="pv-chip a"><span class="d"></span>Cláusula</div>
+          <div class="pv-chip c"><span class="d"></span>CDC</div>
+          <div class="pv-glyph">§</div></div>
+        </div>
+        <div class="pcard-body">
+          <span class="kicker">B2B Vertical · Jurídico</span>
+          <h3>Dra. Cláusula</h3>
+          <p><span data-pt>Revisa contratos e destaca cláusulas abusivas (CDC) e riscos de prescrição.</span><span data-en>Reviews contracts and flags abusive clauses and limitation-period risks.</span></p>
+          <div class="pcard-foot">
+            <div class="pcard-tags"><span class="tag">Contratos</span><span class="tag">Desktop</span></div>
+            <span class="play-link"><span class="dot">▶</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- SEU VINCULO -->
+      <a class="pcard" data-cat="b2b" href="demos/seu-vinculo.html" style="--accent:#C0902A" data-reveal>
+        <div class="pcard-canvas"><div class="pv"><div class="pv-grid"></div>
+          <div class="pv-chip a"><span class="d"></span>CLT</div>
+          <div class="pv-chip c"><span class="d"></span>RH</div>
+          <div class="pv-glyph">§</div></div>
+        </div>
+        <div class="pcard-body">
+          <span class="kicker">B2B Vertical · Trabalhista</span>
+          <h3>Seu Vínculo</h3>
+          <p><span data-pt>Confere documentos trabalhistas (CLT) e aponta riscos de compliance de RH.</span><span data-en>Checks labor (CLT) documents and flags HR compliance risks.</span></p>
+          <div class="pcard-foot">
+            <div class="pcard-tags"><span class="tag">CLT</span><span class="tag">Desktop</span></div>
+            <span class="play-link"><span class="dot">▶</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- FAKE NEWS -->
+      <a class="pcard" data-cat="ai" href="demos/fake-news.html" style="--accent:#D2483F" data-reveal data-delay="1">
+        <div class="pcard-canvas"><div class="pv"><div class="pv-grid"></div>
+          <div class="pv-chip a"><span class="d"></span>PT / EN</div>
+          <div class="pv-chip c"><span class="d"></span>score</div>
+          <div class="pv-glyph">?!</div></div>
+        </div>
+        <div class="pcard-body">
+          <span class="kicker">Applied AI · NLP</span>
+          <h3>Fake-News Detector</h3>
+          <p><span data-pt>API que dá um score de credibilidade a notícias (PT/EN) e explica os sinais de alerta.</span><span data-en>REST API that scores news credibility (PT/EN) and explains the red flags.</span></p>
+          <div class="pcard-foot">
+            <div class="pcard-tags"><span class="tag hot">Llama 3.2</span><span class="tag">REST</span></div>
+            <span class="play-link"><span class="dot">▶</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- SMART TRIAGE -->
+      <a class="pcard" data-cat="ai" href="demos/smart-triage.html" style="--accent:#8B3FD9" data-reveal data-delay="2">
+        <div class="pcard-canvas"><div class="pv"><div class="pv-grid"></div>
+          <div class="pv-spark"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="pv-chip c"><span class="d"></span>RAG</div>
+          <div class="pv-glyph">☎</div></div>
+        </div>
+        <div class="pcard-body">
+          <span class="kicker">Applied AI · BPO</span>
+          <h3>Smart Triage</h3>
+          <p><span data-pt>Triagem omnichannel para call centers: áudio/texto vira ficha pronta pro atendente.</span><span data-en>Omnichannel triage for call centers: audio/text becomes a ready brief for the agent.</span></p>
+          <div class="pcard-foot">
+            <div class="pcard-tags"><span class="tag hot">Whisper</span><span class="tag">RAG</span></div>
+            <span class="play-link"><span class="dot">▶</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ANOMALY -->
+      <a class="pcard" data-cat="ai" href="demos/anomaly-detector.html" style="--accent:#2F5BD9" data-reveal>
+        <div class="pcard-canvas"><div class="pv"><div class="pv-grid"></div>
+          <div class="pv-chip a"><span class="d"></span>outlier</div>
+          <div class="pv-glyph">⤴</div></div>
+        </div>
+        <div class="pcard-body">
+          <span class="kicker">Applied AI · Data</span>
+          <h3>Anomaly Detector</h3>
+          <p><span data-pt>Detecta anomalias em séries e dados — o ponto fora da curva, explicado.</span><span data-en>Detects anomalies in series and datasets — the outlier, explained.</span></p>
+          <div class="pcard-foot">
+            <div class="pcard-tags"><span class="tag">Python</span><span class="tag">Stats</span></div>
+            <span class="play-link"><span class="dot">▶</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- RAG DOCS -->
+      <a class="pcard" data-cat="ai" href="demos/rag-docs.html" style="--accent:#5A43E0" data-reveal data-delay="1">
+        <div class="pcard-canvas"><div class="pv"><div class="pv-grid"></div>
+          <div class="pv-chip a"><span class="d"></span>fonte</div>
+          <div class="pv-chip c"><span class="d"></span>citação</div>
+          <div class="pv-glyph">¶</div></div>
+        </div>
+        <div class="pcard-body">
+          <span class="kicker">Applied AI · RAG</span>
+          <h3>RAG Docs</h3>
+          <p><span data-pt>Pergunte aos seus documentos e receba respostas com citação da fonte.</span><span data-en>Ask your documents and get answers with source citations.</span></p>
+          <div class="pcard-foot">
+            <div class="pcard-tags"><span class="tag hot">Embeddings</span><span class="tag">LLM</span></div>
+            <span class="play-link"><span class="dot">▶</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- CREATIVE DIRECTOR -->
+      <a class="pcard" data-cat="ai" href="demos/creative-director.html" style="--accent:#D9712F" data-reveal data-delay="2">
+        <div class="pcard-canvas"><div class="pv"><div class="pv-grid"></div>
+          <div class="pv-chip a"><span class="d"></span>brief</div>
+          <div class="pv-chip c"><span class="d"></span>conceito</div>
+          <div class="pv-glyph">✦</div></div>
+        </div>
+        <div class="pcard-body">
+          <span class="kicker">Applied AI · Creative</span>
+          <h3>Creative AI Director</h3>
+          <p><span data-pt>Diretor criativo de IA: do briefing ao conceito de campanha em minutos.</span><span data-en>AI creative director: from brief to campaign concept in minutes.</span></p>
+          <div class="pcard-foot">
+            <div class="pcard-tags"><span class="tag">LLM</span><span class="tag">Brand</span></div>
+            <span class="play-link"><span class="dot">▶</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- AI AUDIT -->
+      <a class="pcard" data-cat="nocode" href="demos/ai-audit.html" style="--accent:#5A43E0" data-reveal>
+        <div class="badge-live"><span class="pulse"></span>LIVE</div>
+        <div class="pcard-canvas"><div class="pv"><div class="pv-grid"></div>
+          <div class="pv-orbit"><div class="core"></div></div>
+          <div class="pv-chip c"><span class="d"></span>0–100</div>
+          <div class="pv-glyph">AI</div></div>
+        </div>
+        <div class="pcard-body">
+          <span class="kicker">No-code · Lead funnel</span>
+          <h3>AI Audit</h3>
+          <p><span data-pt>Diagnóstico de maturidade em IA para PMEs: score 0–100 e as 3 maiores oportunidades.</span><span data-en>AI maturity diagnostic for SMBs: a 0–100 score and the top 3 opportunities.</span></p>
+          <div class="pcard-foot">
+            <div class="pcard-tags"><span class="tag">No-code</span><span class="tag">Funnel</span></div>
+            <span class="play-link"><span class="dot">▶</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- FISCAL FLOW -->
+      <a class="pcard" data-cat="nocode" href="demos/fiscal-flow.html" style="--accent:#16976A" data-reveal data-delay="1">
+        <div class="badge-live"><span class="pulse"></span>LIVE</div>
+        <div class="pcard-canvas"><div class="pv"><div class="pv-grid"></div>
+          <div class="pv-spark"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="pv-chip c"><span class="d"></span>CSV</div>
+          <div class="pv-glyph">NF</div></div>
+        </div>
+        <div class="pcard-body">
+          <span class="kicker">No-code · Fiscal</span>
+          <h3>Fiscal Flow</h3>
+          <p><span data-pt>Arraste seus XMLs de NF-e e receba tudo categorizado + um CSV pronto pro contador.</span><span data-en>Drop your NF-e XMLs and get everything categorized + a CSV ready for your accountant.</span></p>
+          <div class="pcard-foot">
+            <div class="pcard-tags"><span class="tag">100% browser</span><span class="tag">CSV</span></div>
+            <span class="play-link"><span class="dot">▶</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- NICHO BOT -->
+      <a class="pcard" data-cat="nocode" href="demos/nicho-bot.html" style="--accent:#25A06A" data-reveal data-delay="2">
+        <div class="badge-live"><span class="pulse"></span>LIVE</div>
+        <div class="pcard-canvas"><div class="pv"><div class="pv-grid"></div>
+          <div class="pv-chip a"><span class="d"></span>Odonto</div>
+          <div class="pv-chip c"><span class="d"></span>24h</div>
+          <div class="pv-glyph">💬</div></div>
+        </div>
+        <div class="pcard-body">
+          <span class="kicker">No-code · WhatsApp</span>
+          <h3>Nicho-Bot</h3>
+          <p><span data-pt>Monte um chatbot de WhatsApp já treinado pro seu nicho, em minutos.</span><span data-en>Build a WhatsApp chatbot pre-trained for your niche, in minutes.</span></p>
+          <div class="pcard-foot">
+            <div class="pcard-tags"><span class="tag">No-code</span><span class="tag">Bot</span></div>
+            <span class="play-link"><span class="dot">▶</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- DATA QUALITY -->
+      <a class="pcard" data-cat="nocode ai" href="demos/data-quality.html" style="--accent:#C0902A" data-reveal>
+        <div class="pcard-canvas"><div class="pv"><div class="pv-grid"></div>
+          <div class="pv-chip a"><span class="d"></span>nulos</div>
+          <div class="pv-chip c"><span class="d"></span>outliers</div>
+          <div class="pv-glyph">✓</div></div>
+        </div>
+        <div class="pcard-body">
+          <span class="kicker">Data · Quality</span>
+          <h3>Data-Quality Checker</h3>
+          <p><span data-pt>Aponta nulos, outliers, duplicatas e tipos misturados no seu CSV — com relatório.</span><span data-en>Flags nulls, outliers, duplicates and mixed types in your CSV — with a report.</span></p>
+          <div class="pcard-foot">
+            <div class="pcard-tags"><span class="tag">pandas</span><span class="tag">Report</span></div>
+            <span class="play-link"><span class="dot">▶</span></span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow"><span data-pt>O que eu faço bem</span><span data-en>What I do well</span></p>
+      <h2 class="h-xl" style="margin-top:18px">
+        <span data-pt>Discovery de produto + construção com IA, na mesma pessoa.</span>
+        <span data-en>Product discovery + AI building, in the same person.</span>
+      </h2>
+    </div>
+    <div class="skill-cols">
+      <div class="skill" data-reveal>
+        <h4><span data-pt>Produto & Discovery</span><span data-en>Product &amp; Discovery</span></h4>
+        <div class="tags">
+          <span class="tag hot"><span data-pt>Investigação de dores</span><span data-en>Pain discovery</span></span>
+          <span class="tag"><span data-pt>Diagnóstico de IA</span><span data-en>AI opportunity scoping</span></span>
+          <span class="tag">Roadmap</span><span class="tag">MVP</span>
+          <span class="tag"><span data-pt>Validação</span><span data-en>Validation</span></span>
+          <span class="tag">0→1</span>
+        </div>
+      </div>
+      <div class="skill" data-reveal data-delay="1">
+        <h4><span data-pt>IA & Engenharia</span><span data-en>AI &amp; Engineering</span></h4>
+        <div class="tags">
+          <span class="tag hot">Claude Code</span><span class="tag">LLMs</span>
+          <span class="tag"><span data-pt>Engenharia de prompt</span><span data-en>Prompt engineering</span></span>
+          <span class="tag">RAG</span><span class="tag">Agents</span>
+          <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Ollama</span>
+        </div>
+      </div>
+      <div class="skill" data-reveal data-delay="2">
+        <h4><span data-pt>Entrega & No-Code</span><span data-en>Delivery &amp; No-Code</span></h4>
+        <div class="tags">
+          <span class="tag hot">No-code</span><span class="tag">HTML/JS</span>
+          <span class="tag">React</span><span class="tag">Electron</span>
+          <span class="tag">GitHub Pages</span><span class="tag">Docker</span>
+          <span class="tag"><span data-pt>Apps desktop .exe</span><span data-en>Desktop .exe apps</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section alt" id="about">
+  <div class="wrap about-grid">
+    <div data-reveal>
+      <p class="eyebrow"><span data-pt>Sobre</span><span data-en>About</span></p>
+      <p class="quote" style="margin:18px 0 22px">
+        <span data-pt>“Eu entendo a dor de uma área, descubro onde a IA agrega valor e construo a solução — para que o trabalho fique mais eficiente e produtivo.”</span>
+        <span data-en>“I understand a team's pain, find where AI adds value and build the solution — so the work gets faster and more productive.”</span>
+      </p>
+      <p class="lead">
+        <span data-pt>Sou Tayna Azevedo, de São Paulo. Trabalho na fronteira entre produto e IA: pesquiso o mercado, prototipo rápido com Claude Code e no-code, e transformo ideias em software que vai pro ar. Já idealizei e construí 17 produtos — de ferramentas web client-side a uma linha de SaaS vertical B2B e agentes autônomos.</span>
+        <span data-en>I'm Tayna Azevedo, based in São Paulo. I work at the border of product and AI: I research the market, prototype fast with Claude Code and no-code, and turn ideas into software that ships. I've conceived and built 17 products — from client-side web tools to a vertical B2B SaaS line and autonomous agents.</span>
+      </p>
+      <div class="hero-cta" style="margin-top:20px">
+        <a class="btn btn-accent" href="#contact"><span data-pt>Trabalhar comigo</span><span data-en>Work with me</span><span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="https://github.com/taynaazevedodealmeida-dev" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div data-reveal data-delay="1">
+      <div class="portrait">
+        <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+        <span class="mono-init">TA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / FOOTER -->
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div data-reveal>
+        <p class="eyebrow" style="color:#C9B8FF"><span data-pt>Contato</span><span data-en>Get in touch</span></p>
+        <h2 class="display" style="font-size:clamp(2.2rem,5.5vw,4rem);margin-top:16px;max-width:16ch">
+          <span data-pt>Tem uma dor que a IA poderia resolver?</span>
+          <span data-en>Got a pain AI could solve?</span>
+        </h2>
+        <p style="color:#B7B2A8;max-width:46ch;margin-top:16px">
+          <span data-pt>Vamos diagnosticar e prototipar juntos. Respondo rápido.</span>
+          <span data-en>Let's diagnose and prototype it together. I reply fast.</span>
+        </p>
+        <a class="btn btn-accent" style="margin-top:24px" href="mailto:taynaazevedodealmeida@gmail.com">
+          taynaazevedodealmeida@gmail.com <span class="arrow">→</span>
+        </a>
+      </div>
+      <div class="foot-links" data-reveal data-delay="1">
+        <a href="https://www.linkedin.com/in/taynaazevedodealmeida/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://github.com/taynaazevedodealmeida-dev" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="mailto:taynaazevedodealmeida@gmail.com">E-mail ↗</a>
+        <a href="#work"><span data-pt>Demonstrações</span><span data-en>Demos</span> ↗</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Tayna Azevedo de Almeida</span>
+      <span class="mono"><span data-pt>Feito com Claude Code · sem dados reais expostos</span><span data-en>Built with Claude Code · no real data exposed</span></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/hub.js"></script>
+</body>
+</html>

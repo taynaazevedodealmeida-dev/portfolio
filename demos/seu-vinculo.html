@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/demo.css">
+<body class="demo-body" style="--accent:#C0902A;--accent-ink:#8A6614" data-title-pt="Seu Vínculo — demonstração" data-title-en="Seu Vínculo — demo">
+
+<div class="dbar">
+  <a class="back" href="../index.html#work">← <span data-pt>Portfólio</span><span data-en>Portfolio</span></a>
+  <div class="who"><span class="dot"></span>Seu Vínculo <small data-pt>trabalhista · CLT</small><small data-en>labor · CLT</small></div>
+  <div class="lang" role="group" aria-label="Language"><button data-lang-btn="pt" class="on">PT</button><button data-lang-btn="en">EN</button></div>
+</div>
+
+<div class="stage-shell">
+  <div class="phases">
+    <span class="phase"><span data-pt>Documento</span><span data-en>Document</span></span>
+    <span class="phase"><span data-pt>Extrai</span><span data-en>Extract</span></span>
+    <span class="phase"><span data-pt>Analisa</span><span data-en>Analyze</span></span>
+    <span class="phase"><span data-pt>Laudo</span><span data-en>Report</span></span>
+  </div>
+  <div class="stage">
+    <div class="splash" id="splash">
+      <div class="splash-in">
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="3.4"/><path d="M5 21c0-4 3.5-6 7-6s7 2 7 6"/></svg>
+        <p class="tl" data-pt>SaaS vertical · RH</p><p class="tl" data-en>Vertical SaaS · HR</p>
+        <h1>Seu Vínculo</h1>
+        <p><span data-pt>Confere documentos trabalhistas (CLT) e aponta riscos de passivo e compliance de RH.</span><span data-en>Checks labor (CLT) documents and flags liability and HR compliance risks.</span></p>
+        <div class="splash-cta">
+          <button class="btn btn-accent" data-start><span data-pt>▶ Iniciar demonstração</span><span data-en>▶ Start demo</span></button>
+          <button class="skip" data-skip><span data-pt>pular para o fim</span><span data-en>skip to end</span> ✕</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="scene" data-dur="5400" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>A dor</span><span data-en>The pain</span></p>
+        <h2 class="big" data-in="2"><span data-pt>Um detalhe no contrato de trabalho vira passivo na justiça.</span><span data-en>One detail in the labor contract becomes a lawsuit later.</span></h2>
+        <p class="say" data-in="3"><span data-pt>Salário, jornada, tipo de contrato, aviso prévio — fácil errar, caro corrigir depois.</span><span data-en>Salary, hours, contract type, notice — easy to get wrong, costly to fix later.</span></p>
+      </div>
+      <div class="cap"><span class="av">S</span><span class="txt"><span data-pt>O Seu Vínculo confere o documento contra a CLT antes de assinar.</span><span data-en>Seu Vínculo checks the document against labor law before signing.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6200" data-phase="1">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Leitura do documento (amostra sintética)</span><span data-en>Document reading (synthetic sample)</span></p>
+        <div class="cols-2 top">
+          <div class="filechip doc" data-in="2" style="width:fit-content"><span class="x">DOCX</span> contrato_trabalho.docx</div>
+          <div class="kv" data-in="3">
+            <div class="row"><span data-pt>Cargo</span><span data-en>Role</span><span data-pt>Assistente</span><span data-en>Assistant</span></div>
+            <div class="row"><span data-pt>Salário</span><span data-en>Salary</span><span>R$ 1.480,00</span></div>
+            <div class="row"><span data-pt>Jornada</span><span data-en>Hours</span><span>46h/sem</span></div>
+            <div class="row"><span data-pt>Tipo</span><span data-en>Type</span><span data-pt>prazo determinado</span><span data-en>fixed term</span></div>
+            <div class="row"><span data-pt>Admissão</span><span data-en>Start</span><span>03/2026</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">S</span><span class="txt"><b><span data-pt>Extrai.</span><span data-en>Extract.</span></b> <span data-pt>Estrutura os campos do contrato de trabalho.</span><span data-en>Structures the labor-contract fields.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="7000" data-phase="2">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Regras trabalhistas auditáveis</span><span data-en>Audited labor rules</span></p>
+        <div class="stack">
+          <div class="flag bad" data-in="2"><span class="ic">⚑</span><span class="b"><b data-pt>Salário abaixo do mínimo de 2026</b><b data-en>Salary below the 2026 minimum</b><small data-pt>R$ 1.480 &lt; R$ 1.621</small><small data-en>R$ 1,480 &lt; R$ 1,621</small></span><span class="base">Decreto 12.797/25</span></div>
+          <div class="flag bad" data-in="3"><span class="ic">⏱</span><span class="b"><b data-pt>Jornada acima do limite</b><b data-en>Hours above the limit</b><small data-pt>46h &gt; 44h semanais</small><small data-en>46h &gt; 44h weekly</small></span><span class="base">CF art. 7º</span></div>
+          <div class="flag warn" data-in="4"><span class="ic">§</span><span class="b"><b data-pt>Contrato por prazo determinado a justificar</b><b data-en>Fixed-term contract needs justification</b><small data-pt>hipóteses restritas</small><small data-en>restricted grounds</small></span><span class="base">CLT art. 443/445</span></div>
+          <div class="flag warn" data-in="5"><span class="ic">📅</span><span class="b"><b data-pt>Aviso prévio proporcional ausente</b><b data-en>Proportional notice missing</b></span><span class="base">Lei 12.506/11</span></div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">S</span><span class="txt"><b><span data-pt>Analisa.</span><span data-en>Analyze.</span></b> <span data-pt>CLT, CF, FGTS e salário mínimo vigente — base legal em cada alerta.</span><span data-en>Labor law, constitution, FGTS and current minimum wage — legal basis on every alert.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6400" data-phase="3">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>O laudo</span><span data-en>The report</span></p>
+        <div class="cols-2">
+          <div style="display:grid;place-items:center" data-in="2">
+            <div class="gauge" style="--p:81;--gc:#D2483F"><span class="val">81</span><span class="lbl" data-pt>risco</span><span class="lbl" data-en>risk</span></div>
+          </div>
+          <div class="stack" data-in="3">
+            <p class="say" style="font-size:1rem"><span data-pt><b>Risco alto de passivo.</b> 2 itens fora da lei e 2 pontos a regularizar antes da admissão.</span><span data-en><b>High liability risk.</b> 2 items out of compliance and 2 points to fix before hiring.</span></p>
+            <div class="flag good" data-in="4"><span class="ic">✓</span><span class="b"><b data-pt>Checklist de regularização</b><b data-en>Compliance checklist</b><small data-pt>o que ajustar, com fundamento</small><small data-en>what to fix, with grounds</small></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">S</span><span class="txt"><b><span data-pt>Laudo.</span><span data-en>Report.</span></b> <span data-pt>Previne o passivo trabalhista — RH decide com segurança.</span><span data-en>Prevents labor liability — HR decides with confidence.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="9000" data-phase="3">
+      <div class="scene-inner endcard center-col">
+        <p class="scene-kicker" data-in="1">Seu Vínculo</p>
+        <h2 class="big" data-in="2" style="margin-inline:auto"><span data-pt>Compliance trabalhista antes que vire processo.</span><span data-en>Labor compliance before it becomes a lawsuit.</span></h2>
+        <p class="say" data-in="3" style="margin-inline:auto"><span data-pt>Quarto produto da linha “Intel”, mesma arquitetura replicável: Python/FastAPI + desktop instalável.</span><span data-en>Fourth product of the “Intel” line, same replicable architecture: Python/FastAPI + installable desktop.</span></p>
+        <div class="row" data-in="4">
+          <a class="btn btn-accent" href="../index.html#work"><span data-pt>Ver outros projetos</span><span data-en>See other projects</span> →</a>
+          <button class="btn btn-ghost" data-restart><span data-pt>↺ Repetir</span><span data-en>↺ Replay</span></button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="cbtns">
+    <button class="cbtn" data-restart aria-label="Restart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></button>
+    <button class="cbtn" data-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 6 8 12l6 6z"/></svg></button>
+  </div>
+  <button class="cbtn play" data-play aria-label="Play"></button>
+  <div class="cbtns"><button class="cbtn" data-next aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m10 6 6 6-6 6z"/></svg></button></div>
+  <div class="rail" id="rail"></div>
+  <span class="cstep" id="cstep"></span>
+</div>
+
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/demo.js"></script>
+</body>
+</html>

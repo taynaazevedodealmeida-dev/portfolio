@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/demo.css">
+<body class="demo-body" style="--accent:#C0902A;--accent-ink:#8A6614" data-title-pt="Data-Quality Checker — demonstração" data-title-en="Data-Quality Checker — demo">
+
+<div class="dbar">
+  <a class="back" href="../index.html#work">← <span data-pt>Portfólio</span><span data-en>Portfolio</span></a>
+  <div class="who"><span class="dot"></span>Data-Quality Checker <small data-pt>qualidade de CSV</small><small data-en>CSV quality</small></div>
+  <div class="lang" role="group" aria-label="Language"><button data-lang-btn="pt" class="on">PT</button><button data-lang-btn="en">EN</button></div>
+</div>
+
+<div class="stage-shell">
+  <div class="phases">
+    <span class="phase">CSV</span>
+    <span class="phase"><span data-pt>Analisa</span><span data-en>Analyze</span></span>
+    <span class="phase"><span data-pt>Aponta</span><span data-en>Flag</span></span>
+    <span class="phase"><span data-pt>Relatório</span><span data-en>Report</span></span>
+  </div>
+  <div class="stage">
+    <div class="splash" id="splash">
+      <div class="splash-in">
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="18" cy="6" r="3" fill="currentColor" stroke="none" opacity=".5"/></svg>
+        <p class="tl" data-pt>Dados · qualidade</p><p class="tl" data-en>Data · quality</p>
+        <h1>Data-Quality Checker</h1>
+        <p><span data-pt>Aponta nulos, outliers, duplicatas e tipos misturados no seu CSV — e devolve um relatório e os dados limpos.</span><span data-en>Flags nulls, outliers, duplicates and mixed types in your CSV — and returns a report and clean data.</span></p>
+        <div class="splash-cta">
+          <button class="btn btn-accent" data-start><span data-pt>▶ Iniciar demonstração</span><span data-en>▶ Start demo</span></button>
+          <button class="skip" data-skip><span data-pt>pular para o fim</span><span data-en>skip to end</span> ✕</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="scene" data-dur="5600" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>A dor</span><span data-en>The pain</span></p>
+        <h2 class="big" data-in="2"><span data-pt>40% dos projetos de IA falham por dados sem qualidade.</span><span data-en>40% of AI projects fail because of poor data quality.</span></h2>
+        <p class="say" data-in="3"><span data-pt>O modelo só é tão bom quanto o CSV que o alimenta.</span><span data-en>A model is only as good as the CSV that feeds it.</span></p>
+      </div>
+      <div class="cap"><span class="av">Q</span><span class="txt"><span data-pt>O checker audita os dados antes de você confiar neles.</span><span data-en>The checker audits the data before you trust it.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="5600" data-phase="1">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>O CSV entra (amostra sintética)</span><span data-en>The CSV comes in (synthetic sample)</span></p>
+        <div class="cols-2 top">
+          <div class="filechip csv" data-in="2" style="width:fit-content"><span class="x">CSV</span> vendas.csv · 20 <span data-pt>linhas</span><span data-en>rows</span></div>
+          <div class="win" data-in="3"><div class="win-bar"><div class="lights"><i></i><i></i><i></i></div><span class="ttl">python main.py vendas.csv</span></div>
+            <div class="win-body"><p class="say" style="font-size:.92rem;margin:0"><span data-pt>4 verificações: nulos, outliers (IQR 1.5×), duplicatas e tipos misturados.</span><span data-en>4 checks: nulls, outliers (IQR 1.5×), duplicates and mixed types.</span></p></div>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">Q</span><span class="txt"><b><span data-pt>Analisa.</span><span data-en>Analyze.</span></b> <span data-pt>Linha de comando em Python + pandas.</span><span data-en>Python + pandas command line.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="7000" data-phase="2">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Os problemas, marcados</span><span data-en>The problems, flagged</span></p>
+        <div class="win" data-in="2">
+          <div class="win-bar"><div class="lights"><i></i><i></i><i></i></div><span class="ttl">vendas.csv</span></div>
+          <div class="win-body">
+            <table class="dtable">
+              <tr><th>#</th><th data-pt>Produto</th><th data-en>Product</th><th class="num" data-pt>Preço</th><th class="num" data-en>Price</th><th data-pt>Problema</th><th data-en>Issue</th></tr>
+              <tr class="flagged"><td>7</td><td>—</td><td class="num">120</td><td><span class="pill pill-warn" data-pt>nulo</span><span class="pill pill-warn" data-en>null</span></td></tr>
+              <tr class="flagged"><td>12</td><td>Mouse</td><td class="num">9.999</td><td><span class="pill pill-bad">outlier</span></td></tr>
+              <tr class="flagged"><td>15</td><td>Mouse</td><td class="num">120</td><td><span class="pill pill-bad" data-pt>duplicata</span><span class="pill pill-bad" data-en>duplicate</span></td></tr>
+              <tr class="flagged"><td>18</td><td>Teclado</td><td class="num">"abc"</td><td><span class="pill pill-warn" data-pt>tipo misto</span><span class="pill pill-warn" data-en>mixed type</span></td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">Q</span><span class="txt"><b><span data-pt>Aponta.</span><span data-en>Flag.</span></b> <span data-pt>Coluna só é “tipo misto” se misturar número e texto de verdade.</span><span data-en>A column is “mixed type” only if it truly mixes number and text.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6400" data-phase="3">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Relatório + dados limpos</span><span data-en>Report + clean data</span></p>
+        <div class="merge" style="display:flex;gap:10px;flex-wrap:wrap">
+          <div class="filechip" data-in="2"><span class="x" style="background:#D2683A">HTML</span> relatorio.html</div>
+          <div class="filechip csv" data-in="3"><span class="x">CSV</span> dados_limpos.csv</div>
+        </div>
+        <div class="kv" data-in="4" style="margin-top:6px">
+          <div class="row"><span data-pt>Nulos</span><span data-en>Nulls</span><span>1</span></div>
+          <div class="row"><span>Outliers</span><span>1</span></div>
+          <div class="row"><span data-pt>Duplicatas</span><span data-en>Duplicates</span><span>1</span></div>
+          <div class="row"><span data-pt>Tipos mistos</span><span data-en>Mixed types</span><span>1</span></div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">Q</span><span class="txt"><b><span data-pt>Relatório.</span><span data-en>Report.</span></b> <span data-pt>HTML com destaque por tipo de problema + CSV já limpo (Jinja2).</span><span data-en>HTML highlighted by issue type + an already-clean CSV (Jinja2).</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="9000" data-phase="3">
+      <div class="scene-inner endcard center-col">
+        <p class="scene-kicker" data-in="1">Data-Quality Checker</p>
+        <h2 class="big" data-in="2" style="margin-inline:auto"><span data-pt>Dados confiáveis antes do modelo — não depois.</span><span data-en>Trustworthy data before the model — not after.</span></h2>
+        <p class="say" data-in="3" style="margin-inline:auto"><span data-pt>Python + pandas + Jinja2. Peça de portfólio voltada a vagas de dados e IA.</span><span data-en>Python + pandas + Jinja2. A portfolio piece aimed at data &amp; AI roles.</span></p>
+        <div class="row" data-in="4">
+          <a class="btn btn-accent" href="../index.html#work"><span data-pt>Ver outros projetos</span><span data-en>See other projects</span> →</a>
+          <button class="btn btn-ghost" data-restart><span data-pt>↺ Repetir</span><span data-en>↺ Replay</span></button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="cbtns">
+    <button class="cbtn" data-restart aria-label="Restart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></button>
+    <button class="cbtn" data-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 6 8 12l6 6z"/></svg></button>
+  </div>
+  <button class="cbtn play" data-play aria-label="Play"></button>
+  <div class="cbtns"><button class="cbtn" data-next aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m10 6 6 6-6 6z"/></svg></button></div>
+  <div class="rail" id="rail"></div>
+  <span class="cstep" id="cstep"></span>
+</div>
+
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/demo.js"></script>
+</body>
+</html>

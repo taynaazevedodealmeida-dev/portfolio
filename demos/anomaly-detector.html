@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/demo.css">
+<style>
+  .chartbox{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px; }
+  .band{ fill:color-mix(in srgb,var(--accent) 9%,transparent); }
+</style>
+<body class="demo-body" style="--accent:#2F5BD9;--accent-ink:#1E3C9E" data-title-pt="Anomaly Detector — demonstração" data-title-en="Anomaly Detector — demo">
+
+<div class="dbar">
+  <a class="back" href="../index.html#work">← <span data-pt>Portfólio</span><span data-en>Portfolio</span></a>
+  <div class="who"><span class="dot"></span>Anomaly Detector <small data-pt>o ponto fora da curva</small><small data-en>the outlier, explained</small></div>
+  <div class="lang" role="group" aria-label="Language"><button data-lang-btn="pt" class="on">PT</button><button data-lang-btn="en">EN</button></div>
+</div>
+
+<div class="stage-shell">
+  <div class="phases">
+    <span class="phase"><span data-pt>Série</span><span data-en>Series</span></span>
+    <span class="phase"><span data-pt>Modela</span><span data-en>Model</span></span>
+    <span class="phase"><span data-pt>Detecta</span><span data-en>Detect</span></span>
+    <span class="phase"><span data-pt>Explica</span><span data-en>Explain</span></span>
+  </div>
+  <div class="stage">
+    <div class="splash" id="splash">
+      <div class="splash-in">
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M3 17l4-5 3 3 4-9 3 6 4-3"/></svg>
+        <p class="tl" data-pt>IA aplicada · Dados</p><p class="tl" data-en>Applied AI · Data</p>
+        <h1>Anomaly Detector</h1>
+        <p><span data-pt>Encontra a anomalia escondida em milhares de pontos — e explica por que ela é uma anomalia.</span><span data-en>Finds the anomaly hidden in thousands of points — and explains why it is one.</span></p>
+        <div class="splash-cta">
+          <button class="btn btn-accent" data-start><span data-pt>▶ Iniciar demonstração</span><span data-en>▶ Start demo</span></button>
+          <button class="skip" data-skip><span data-pt>pular para o fim</span><span data-en>skip to end</span> ✕</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="scene" data-dur="5400" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>A dor</span><span data-en>The pain</span></p>
+        <h2 class="big" data-in="2"><span data-pt>A fraude — ou a falha — está em um ponto entre milhares.</span><span data-en>The fraud — or the fault — is one point among thousands.</span></h2>
+        <p class="say" data-in="3"><span data-pt>A olho nu, você só percebe quando já é tarde.</span><span data-en>By eye, you only notice once it's too late.</span></p>
+      </div>
+      <div class="cap"><span class="av">A</span><span class="txt"><span data-pt>O detector vigia a série por você.</span><span data-en>The detector watches the series for you.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6000" data-phase="1">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>A série entra (amostra sintética)</span><span data-en>The series comes in (synthetic sample)</span></p>
+        <div class="chartbox" data-in="2">
+          <svg viewBox="0 0 400 160" class="spark" style="width:100%">
+            <line x1="10" y1="130" x2="395" y2="130" stroke="var(--line)"/>
+            <path class="draw" pathLength="1" d="M10 100 L40 95 L70 105 L100 92 L130 100 L160 96 L190 102 L220 96 L250 99 L280 98 L310 101 L340 97 L370 100 L395 99" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="cap"><span class="av">A</span><span class="txt"><b><span data-pt>Modela.</span><span data-en>Model.</span></b> <span data-pt>Aprende o comportamento normal — a faixa esperada da série.</span><span data-en>Learns the normal behavior — the expected band of the series.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6400" data-phase="2">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Detecta os pontos fora da faixa</span><span data-en>Detects points outside the band</span></p>
+        <div class="chartbox" data-in="2">
+          <svg viewBox="0 0 400 160" class="spark" style="width:100%">
+            <rect class="band" x="10" y="86" width="385" height="28" rx="6"/>
+            <path class="draw" pathLength="1" d="M10 100 L40 95 L70 105 L100 92 L130 100 L160 96 L190 102 L220 94 L250 34 L280 98 L310 100 L340 150 L370 100 L395 98" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+            <circle class="blip" cx="250" cy="34" r="7" fill="#D2483F"/>
+            <circle class="blip" cx="340" cy="150" r="7" fill="#D2483F"/>
+          </svg>
+        </div>
+      </div>
+      <div class="cap"><span class="av">A</span><span class="txt"><b><span data-pt>Detecta.</span><span data-en>Detect.</span></b> <span data-pt>Dois pontos rompem a faixa esperada (IQR / desvio).</span><span data-en>Two points break the expected band (IQR / deviation).</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="6400" data-phase="3">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>E explica cada anomalia</span><span data-en>And explains each anomaly</span></p>
+        <div class="stack">
+          <div class="flag bad" data-in="2"><span class="ic">↑</span><span class="b"><b data-pt>Pico em 12/mar — +213% acima do esperado</b><b data-en>Spike on Mar 12 — +213% above expected</b><small data-pt>3,8 desvios-padrão da média</small><small data-en>3.8 standard deviations from the mean</small></span></div>
+          <div class="flag bad" data-in="3"><span class="ic">↓</span><span class="b"><b data-pt>Queda em 18/mar — −74% abaixo do esperado</b><b data-en>Drop on Mar 18 — −74% below expected</b><small data-pt>possível falha de coleta ou fraude</small><small data-en>possible data fault or fraud</small></span></div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">A</span><span class="txt"><b><span data-pt>Explica.</span><span data-en>Explain.</span></b> <span data-pt>Não só “onde” — também “o quanto” e “por quê”.</span><span data-en>Not just “where” — also “how much” and “why”.</span></span></div>
+    </section>
+
+    <section class="scene" data-dur="9000" data-phase="3">
+      <div class="scene-inner endcard center-col">
+        <p class="scene-kicker" data-in="1">Anomaly Detector</p>
+        <h2 class="big" data-in="2" style="margin-inline:auto"><span data-pt>O ponto fora da curva, achado e explicado.</span><span data-en>The outlier, found and explained.</span></h2>
+        <p class="say" data-in="3" style="margin-inline:auto"><span data-pt>Python + estatística (IQR / desvio) com saída interpretável. Peça de portfólio focada em dados.</span><span data-en>Python + statistics (IQR / deviation) with interpretable output. A data-focused portfolio piece.</span></p>
+        <div class="row" data-in="4">
+          <a class="btn btn-accent" href="../index.html#work"><span data-pt>Ver outros projetos</span><span data-en>See other projects</span> →</a>
+          <button class="btn btn-ghost" data-restart><span data-pt>↺ Repetir</span><span data-en>↺ Replay</span></button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="cbtns">
+    <button class="cbtn" data-restart aria-label="Restart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></button>
+    <button class="cbtn" data-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 6 8 12l6 6z"/></svg></button>
+  </div>
+  <button class="cbtn play" data-play aria-label="Play"></button>
+  <div class="cbtns"><button class="cbtn" data-next aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m10 6 6 6-6 6z"/></svg></button></div>
+  <div class="rail" id="rail"></div>
+  <span class="cstep" id="cstep"></span>
+</div>
+
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/demo.js"></script>
+</body>
+</html>

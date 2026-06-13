@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/demo.css">
+<style>
+  .steps7{ display:grid; grid-template-columns:1fr 1fr; gap:8px 18px; }
+  .steps7 .step .n{ background:var(--card); color:var(--ink-faint); }
+  .scene.is-active .steps7 .step .n{ background:var(--accent); color:#fff; border-color:transparent; }
+  .provider{ display:inline-flex; align-items:center; gap:.5em; padding:.5em .8em; border:1px solid var(--line); border-radius:100px; background:var(--card); font-size:.84rem; }
+  .provider .b{ width:9px;height:9px;border-radius:50%;background:var(--accent); }
+  .concept{ border-left:3px solid var(--accent); padding:.2em 0 .2em 16px; }
+</style>
+<body class="demo-body" style="--accent:#D9712F;--accent-ink:#A8521E" data-title-pt="Creaitivity — demonstração" data-title-en="Creaitivity — demo">
+
+<div class="dbar">
+  <a class="back" href="../index.html#work">← <span data-pt>Portfólio</span><span data-en>Portfolio</span></a>
+  <div class="who"><span class="dot"></span>Creaitivity <small data-pt>Penso Logo Existo</small><small data-en>I Think Therefore I Am</small></div>
+  <div class="lang" role="group" aria-label="Language"><button data-lang-btn="pt" class="on">PT</button><button data-lang-btn="en">EN</button></div>
+</div>
+
+<div class="stage-shell">
+  <div class="phases">
+    <span class="phase"><span data-pt>Pergunta</span><span data-en>Prompt</span></span>
+    <span class="phase"><span data-pt>Pensa (7)</span><span data-en>Think (7)</span></span>
+    <span class="phase"><span data-pt>Cria</span><span data-en>Create</span></span>
+  </div>
+  <div class="stage">
+    <div class="splash" id="splash">
+      <div class="splash-in">
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+        <p class="tl" data-pt>IA criativa que pensa com você</p><p class="tl" data-en>Creative AI that thinks with you</p>
+        <h1>Creaitivity</h1>
+        <p><span data-pt>A maioria das IAs responde rápido. A Creaitivity mostra as 7 etapas do raciocínio — ao vivo — antes da ideia final.</span><span data-en>Most AIs answer fast. Creaitivity shows the 7 reasoning steps — live — before the final idea.</span></p>
+        <div class="splash-cta">
+          <button class="btn btn-accent" data-start><span data-pt>▶ Iniciar demonstração</span><span data-en>▶ Start demo</span></button>
+          <button class="skip" data-skip><span data-pt>pular para o fim</span><span data-en>skip to end</span> ✕</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- S1 pain -->
+    <section class="scene" data-dur="5400" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>A dor</span><span data-en>The pain</span></p>
+        <h2 class="big" data-in="2"><span data-pt>Respostas de IA: rápidas, óbvias e rasas.</span><span data-en>AI answers: fast, obvious and shallow.</span></h2>
+        <p class="say" data-in="3"><span data-pt>Para um trabalho criativo, o que importa não é a resposta pronta — é o <b>caminho do pensamento</b>.</span><span data-en>For creative work, what matters isn't the canned answer — it's the <b>path of thought</b>.</span></p>
+      </div>
+      <div class="cap"><span class="av">C</span><span class="txt"><span data-pt>A Creaitivity pensa em voz alta, com você.</span><span data-en>Creaitivity thinks out loud, with you.</span></span></div>
+    </section>
+
+    <!-- S2 byoai -->
+    <section class="scene" data-dur="5800" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1">BYOAI · <span data-pt>sua própria chave</span><span data-en>bring your own key</span></p>
+        <div class="merge" style="display:flex;gap:10px;flex-wrap:wrap">
+          <span class="provider" data-in="1"><span class="b"></span>OpenAI</span>
+          <span class="provider" data-in="2"><span class="b"></span>Claude</span>
+          <span class="provider" data-in="3"><span class="b"></span>Gemini</span>
+          <span class="provider" data-in="4"><span class="b"></span>Ollama <span data-pt>(local)</span><span data-en>(local)</span></span>
+        </div>
+        <p class="say" data-in="5"><span data-pt>O motor (a alma) é fixo; o “músculo” é trocável. Você pluga a IA que preferir — a chave fica <b>criptografada</b>.</span><span data-en>The engine (the soul) is fixed; the “muscle” is swappable. Plug in any AI — your key stays <b>encrypted</b>.</span></p>
+      </div>
+      <div class="cap"><span class="av">C</span><span class="txt"><b><span data-pt>Pergunta.</span><span data-en>Prompt.</span></b> <span data-pt>SaaS multiusuário: cada conta, seu espaço isolado.</span><span data-en>Multi-user SaaS: each account, its own isolated space.</span></span></div>
+    </section>
+
+    <!-- S3 the 7 steps -->
+    <section class="scene" data-dur="7600" data-phase="1">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>O motor “Penso Logo Existo” · 7 etapas</span><span data-en>The “I Think Therefore I Am” engine · 7 steps</span></p>
+        <div class="steps7 think">
+          <div class="step" data-in="1"><span class="n">1</span><span data-pt>Entender o desejo real</span><span data-en>Understand the real desire</span></div>
+          <div class="step" data-in="2"><span class="n">2</span><span data-pt>Questionar as suposições</span><span data-en>Question the assumptions</span></div>
+          <div class="step" data-in="3"><span class="n">3</span><span data-pt>Divergir — muitas ideias</span><span data-en>Diverge — many ideas</span></div>
+          <div class="step" data-in="4"><span class="n">4</span><span data-pt>Conectar campos distantes</span><span data-en>Connect distant fields</span></div>
+          <div class="step" data-in="5"><span class="n">5</span><span data-pt>Convergir no que tem força</span><span data-en>Converge on what's strong</span></div>
+          <div class="step" data-in="6"><span class="n">6</span><span data-pt>Estressar a ideia</span><span data-en>Stress-test the idea</span></div>
+          <div class="step" data-in="6"><span class="n">7</span><span data-pt>Refinar a entrega</span><span data-en>Refine the delivery</span></div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">C</span><span class="txt"><b><span data-pt>Pensa.</span><span data-en>Think.</span></b> <span data-pt>Você vê o raciocínio acontecer — não só o resultado.</span><span data-en>You watch the reasoning happen — not just the result.</span></span></div>
+    </section>
+
+    <!-- S4 create -->
+    <section class="scene" data-dur="6800" data-phase="2">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>O resultado criativo</span><span data-en>The creative output</span></p>
+        <div class="win" data-in="2">
+          <div class="win-bar"><div class="lights"><i></i><i></i><i></i></div><span class="ttl" data-pt>conceito</span><span class="ttl" data-en>concept</span></div>
+          <div class="win-body stack">
+            <div class="concept" data-in="3"><b data-pt>Conceito:</b><b data-en>Concept:</b> <span data-pt>“A padaria que vende a manhã, não o pão.”</span><span data-en>“The bakery that sells the morning, not the bread.”</span></div>
+            <p class="say" style="font-size:.96rem" data-in="4"><span data-pt>3 manchetes, 1 roteiro de vídeo e o porquê de cada escolha — derivados das 7 etapas acima.</span><span data-en>3 headlines, 1 video script and the reasoning behind each choice — derived from the 7 steps above.</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">C</span><span class="txt"><b><span data-pt>Cria.</span><span data-en>Create.</span></b> <span data-pt>Ideia com rastro: dá pra defender cada decisão.</span><span data-en>An idea with a trail: every decision is defensible.</span></span></div>
+    </section>
+
+    <!-- end -->
+    <section class="scene" data-dur="9000" data-phase="2">
+      <div class="scene-inner endcard center-col">
+        <p class="scene-kicker" data-in="1">Creaitivity</p>
+        <h2 class="big" data-in="2" style="margin-inline:auto"><span data-pt>A criatividade vira processo — visível e repetível.</span><span data-en>Creativity becomes a process — visible and repeatable.</span></h2>
+        <p class="say" data-in="3" style="margin-inline:auto"><span data-pt>FastAPI + React, auth JWT, chave do usuário criptografada (Fernet), assinatura via webhook. Landing no ar.</span><span data-en>FastAPI + React, JWT auth, encrypted user key (Fernet), subscription via webhook. Landing already live.</span></p>
+        <div class="row" data-in="4">
+          <a class="btn btn-accent" href="../index.html#work"><span data-pt>Ver outros projetos</span><span data-en>See other projects</span> →</a>
+          <button class="btn btn-ghost" data-restart><span data-pt>↺ Repetir</span><span data-en>↺ Replay</span></button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="cbtns">
+    <button class="cbtn" data-restart aria-label="Restart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></button>
+    <button class="cbtn" data-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 6 8 12l6 6z"/></svg></button>
+  </div>
+  <button class="cbtn play" data-play aria-label="Play"></button>
+  <div class="cbtns"><button class="cbtn" data-next aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m10 6 6 6-6 6z"/></svg></button></div>
+  <div class="rail" id="rail"></div>
+  <span class="cstep" id="cstep"></span>
+</div>
+
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/demo.css">
+<style>
+  .sheet{ position:relative; }
+  .sheet table{ width:100%; border-collapse:collapse; font-family:var(--mono); font-size:.78rem; }
+  .sheet td{ border:1px solid var(--line); padding:.45em .6em; height:30px; }
+  .sheet td.fill{ color:transparent; }
+  .scene.is-active .sheet td.fill{ animation:fillcell .5s var(--ease-out) forwards; }
+  .sheet td.fill:nth-child(2){ animation-delay:.5s } .sheet tr:nth-child(2) td.fill{ animation-delay:.9s } .sheet tr:nth-child(3) td.fill{ animation-delay:1.3s } .sheet tr:nth-child(4) td.fill{ animation-delay:1.7s }
+  @keyframes fillcell{ to{ color:var(--ink); } }
+  .cursor{ position:absolute; width:20px; height:20px; z-index:5; color:var(--ink); filter:drop-shadow(0 1px 2px rgba(0,0,0,.3)); top:30px; left:40px; }
+  .scene.is-active .cursor{ animation:cur 4s var(--ease) forwards; }
+  @keyframes cur{ 0%{ top:20px; left:20px } 30%{ top:54px; left:120px } 55%{ top:84px; left:210px } 80%{ top:120px; left:150px } 100%{ top:120px; left:150px } }
+  .term{ background:#15141A; color:#D8F3E8; border-radius:12px; padding:14px 16px; font-family:var(--mono); font-size:.82rem; line-height:1.7; }
+  .term .pr{ color:#1F9C7C; }
+</style>
+<body class="demo-body" style="--accent:#1F9C7C;--accent-ink:#147357" data-title-pt="Synthia CFO — demonstração" data-title-en="Synthia CFO — demo">
+
+<div class="dbar">
+  <a class="back" href="../index.html#work">← <span data-pt>Portfólio</span><span data-en>Portfolio</span></a>
+  <div class="who"><span class="dot"></span>Synthia CFO <small data-pt>CFO digital · Computer Use</small><small data-en>digital CFO · Computer Use</small></div>
+  <div class="lang" role="group" aria-label="Language"><button data-lang-btn="pt" class="on">PT</button><button data-lang-btn="en">EN</button></div>
+</div>
+
+<div class="stage-shell">
+  <div class="phases">
+    <span class="phase"><span data-pt>Pedido</span><span data-en>Request</span></span>
+    <span class="phase"><span data-pt>Planeja</span><span data-en>Plan</span></span>
+    <span class="phase"><span data-pt>Executa</span><span data-en>Execute</span></span>
+    <span class="phase"><span data-pt>Entrega</span><span data-en>Deliver</span></span>
+  </div>
+  <div class="stage">
+    <div class="splash" id="splash">
+      <div class="splash-in">
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M5 7l7-4 7 4M5 7v8l7 4 7-4V7"/></svg>
+        <p class="tl" data-pt>CFO digital · Computer Use</p><p class="tl" data-en>Digital CFO · Computer Use</p>
+        <h1>Synthia</h1>
+        <p><span data-pt>Um CFO de IA que controla o computador sozinho: gera relatórios, concilia e cuida das finanças — 24/7.</span><span data-en>An AI CFO that drives the computer on its own: builds reports, reconciles and runs the finances — 24/7.</span></p>
+        <div class="splash-cta">
+          <button class="btn btn-accent" data-start><span data-pt>▶ Iniciar demonstração</span><span data-en>▶ Start demo</span></button>
+          <button class="skip" data-skip><span data-pt>pular para o fim</span><span data-en>skip to end</span> ✕</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- S1 pain -->
+    <section class="scene" data-dur="5400" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>A dor</span><span data-en>The pain</span></p>
+        <h2 class="big" data-in="2"><span data-pt>Fechar o mês consome dias do financeiro.</span><span data-en>Closing the month eats days of the finance team.</span></h2>
+        <p class="say" data-in="3"><span data-pt>DRE, balanço, fluxo de caixa, conciliação — repetitivo, manual e fácil de errar. E sempre atrasa.</span><span data-en>P&amp;L, balance sheet, cash flow, reconciliation — repetitive, manual and error-prone. And always late.</span></p>
+      </div>
+      <div class="cap"><span class="av">S</span><span class="txt"><span data-pt>A Synthia assume essa rotina inteira.</span><span data-en>Synthia takes over that whole routine.</span></span></div>
+    </section>
+
+    <!-- S2 request -->
+    <section class="scene" data-dur="5600" data-phase="0">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Você só pede — em português</span><span data-en>You just ask — in plain language</span></p>
+        <div class="term" data-in="2">
+          <div><span class="pr">synthia&gt;</span> <span class="typed" data-pt>tarefa "Gere o DRE do mês atual"</span><span class="typed" data-en>task "Build this month's P&amp;L"</span></div>
+        </div>
+        <p class="say" data-in="3"><span data-pt>Sem menu, sem macro, sem planilha mágica. Um comando em linguagem natural.</span><span data-en>No menus, no macros, no magic spreadsheet. One natural-language command.</span></p>
+      </div>
+      <div class="cap"><span class="av">S</span><span class="txt"><b><span data-pt>Pedido.</span><span data-en>Request.</span></b> <span data-pt>Movida pela Claude Computer Use API.</span><span data-en>Powered by the Claude Computer Use API.</span></span></div>
+    </section>
+
+    <!-- S3 plan -->
+    <section class="scene" data-dur="6000" data-phase="1">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Ela planeja antes de agir</span><span data-en>It plans before acting</span></p>
+        <div class="think">
+          <div class="step" data-in="2"><span class="n">1</span><span data-pt>Abrir o razão e separar o período</span><span data-en>Open the ledger and isolate the period</span></div>
+          <div class="step" data-in="3"><span class="n">2</span><span data-pt>Agrupar receitas, custos e despesas</span><span data-en>Group revenue, costs and expenses</span></div>
+          <div class="step" data-in="4"><span class="n">3</span><span data-pt>Calcular margem e resultado líquido</span><span data-en>Compute margin and net result</span></div>
+          <div class="step" data-in="5"><span class="n">4</span><span data-pt>Montar o DRE e salvar</span><span data-en>Assemble the P&amp;L and save</span></div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">S</span><span class="txt"><b><span data-pt>Planeja.</span><span data-en>Plan.</span></b> <span data-pt>O planner quebra o pedido em passos auditáveis.</span><span data-en>The planner breaks the request into auditable steps.</span></span></div>
+    </section>
+
+    <!-- S4 execute - computer use -->
+    <section class="scene" data-dur="6800" data-phase="2">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Executa controlando o computador</span><span data-en>Executes by driving the computer</span></p>
+        <div class="win" data-in="2">
+          <div class="win-bar"><div class="lights"><i></i><i></i><i></i></div><span class="ttl">razao_2026.xlsx</span></div>
+          <div class="win-body sheet">
+            <svg class="cursor" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2l16 9-7 1 4 8-3 1-4-8-6 5z"/></svg>
+            <table>
+              <tr><td>Receita</td><td class="fill num">R$ 482.000</td></tr>
+              <tr><td>Custos</td><td class="fill num">R$ 196.500</td></tr>
+              <tr><td>Despesas</td><td class="fill num">R$ 121.300</td></tr>
+              <tr><td><b>Resultado</b></td><td class="fill num"><b>R$ 164.200</b></td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">S</span><span class="txt"><b><span data-pt>Executa.</span><span data-en>Execute.</span></b> <span data-pt>Mouse e teclado de verdade — ela opera os sistemas que você já usa.</span><span data-en>Real mouse and keyboard — it operates the systems you already use.</span></span></div>
+    </section>
+
+    <!-- S5 deliver -->
+    <section class="scene" data-dur="6600" data-phase="3">
+      <div class="scene-inner">
+        <p class="scene-kicker" data-in="1"><span data-pt>Entrega os relatórios — e repete sozinha</span><span data-en>Delivers the reports — and repeats on its own</span></p>
+        <div class="cols-2">
+          <div class="stack">
+            <div class="flag good" data-in="2"><span class="ic">✓</span><span class="b"><b>DRE</b><small data-pt>resultado líquido R$ 164.200 (+8,2%)</small><small data-en>net result R$ 164,200 (+8.2%)</small></span></div>
+            <div class="flag good" data-in="3"><span class="ic">✓</span><span class="b"><b><span data-pt>Balanço & Fluxo de Caixa</span><span data-en>Balance &amp; Cash Flow</span></b><small data-pt>gerados e salvos</small><small data-en>generated and saved</small></span></div>
+            <div class="flag good" data-in="4"><span class="ic">✓</span><span class="b"><b><span data-pt>Conciliação bancária</span><span data-en>Bank reconciliation</span></b><small data-pt>3 divergências sinalizadas</small><small data-en>3 mismatches flagged</small></span></div>
+          </div>
+          <div class="kv" data-in="5">
+            <div class="row"><span data-pt>Agendador</span><span data-en>Scheduler</span><span>24/7 ✓</span></div>
+            <div class="row"><span data-pt>Próx. fechamento</span><span data-en>Next close</span><span data-pt>automático</span><span data-en>automatic</span></div>
+            <div class="row"><span data-pt>Memória</span><span data-en>Memory</span><span data-pt>aprende rotinas</span><span data-en>learns routines</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="av">S</span><span class="txt"><b><span data-pt>Entrega.</span><span data-en>Deliver.</span></b> <span data-pt>Roda como .exe instalável; agenda e repete o fechamento todo mês.</span><span data-en>Ships as an installable .exe; schedules and repeats the close every month.</span></span></div>
+    </section>
+
+    <!-- end -->
+    <section class="scene" data-dur="9000" data-phase="3">
+      <div class="scene-inner endcard center-col">
+        <p class="scene-kicker" data-in="1">Synthia CFO</p>
+        <h2 class="big" data-in="2" style="margin-inline:auto"><span data-pt>Um sócio financeiro que nunca dorme.</span><span data-en>A finance partner that never sleeps.</span></h2>
+        <p class="say" data-in="3" style="margin-inline:auto"><span data-pt>Computer Use + planner + memória + agendador. Python, empacotado em .exe para Windows.</span><span data-en>Computer Use + planner + memory + scheduler. Python, packaged as a Windows .exe.</span></p>
+        <div class="row" data-in="4">
+          <a class="btn btn-accent" href="../index.html#work"><span data-pt>Ver outros projetos</span><span data-en>See other projects</span> →</a>
+          <button class="btn btn-ghost" data-restart><span data-pt>↺ Repetir</span><span data-en>↺ Replay</span></button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="cbtns">
+    <button class="cbtn" data-restart aria-label="Restart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></button>
+    <button class="cbtn" data-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 6 8 12l6 6z"/></svg></button>
+  </div>
+  <button class="cbtn play" data-play aria-label="Play"></button>
+  <div class="cbtns"><button class="cbtn" data-next aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m10 6 6 6-6 6z"/></svg></button></div>
+  <div class="rail" id="rail"></div>
+  <span class="cstep" id="cstep"></span>
+</div>
+
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/demo.js"></script>
+</body>
+</html>
