@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tayna Azevedo de Almeida — Folha de Pagamento</title>
+<meta name="description" content="O que eu já fiz e construí em folha de pagamento, e como isso se encaixa na vaga de Gerente de Folha de Pagamento Júnior. Experiência real e protótipos autorais." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#FBFAF5; --paper-2:#F2EEE4; --paper-3:#EAE5D8;
+    --ink:#1A1613; --ink-2:#3A352E; --ink-dim:#6E6557; --ink-faint:#9C9384;
+    --line:rgba(26,22,19,.22); --line-soft:rgba(26,22,19,.12); --line-2:rgba(26,22,19,.34);
+    --accent:#5A6E52; --accent-soft:rgba(90,110,82,.10);
+    --mark:#9C5B3B; --mark-soft:rgba(156,91,59,.10);
+    --shadow:0 1px 0 rgba(26,22,19,.04), 0 22px 60px -30px rgba(26,22,19,.45);
+    --display:"Fraunces",Georgia,serif; --sans:"Hanken Grotesk",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
+    --maxw:1000px;
+  }
+  html.escuro{
+    --paper:#13110E; --paper-2:#1A1814; --paper-3:#221F1A;
+    --ink:#EFE7D9; --ink-2:#CFC6B6; --ink-dim:#ADA493; --ink-faint:#776F62;
+    --line:rgba(239,231,217,.22); --line-soft:rgba(239,231,217,.12); --line-2:rgba(239,231,217,.32);
+    --accent:#8FA882; --accent-soft:rgba(143,168,130,.12);
+    --mark:#C98A66; --mark-soft:rgba(201,138,102,.12);
+    --shadow:0 1px 0 rgba(0,0,0,.3), 0 24px 64px -32px rgba(0,0,0,.85);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .5s,color .5s}
+  ::selection{background:var(--mark-soft);color:var(--mark)}
+  a{color:inherit;text-decoration:none}
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:80;background:var(--mark);transition:width .1s linear}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:70;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px clamp(16px,5vw,40px);background:color-mix(in srgb,var(--paper) 84%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .brand{display:flex;flex-direction:column;line-height:1.15}
+  .brand b{font-family:var(--display);font-weight:600;font-size:1rem}
+  .brand span{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);margin-top:2px}
+  .h-right{display:flex;align-items:center;gap:20px}
+  nav{display:flex;gap:18px}
+  nav a{font-size:.8rem;color:var(--ink-dim);position:relative;transition:color .2s}
+  nav a:hover{color:var(--ink)}
+  nav a::after{content:"";position:absolute;left:0;bottom:-4px;height:1.5px;width:0;background:var(--mark);transition:width .25s}
+  nav a:hover::after{width:100%}
+  @media(max-width:860px){nav{display:none}}
+  .toggle{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border:1px solid var(--line);color:var(--ink-dim);background:transparent;border-radius:6px;padding:7px 11px;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+  .toggle:hover{border-color:var(--mark);color:var(--mark)}
+  .toggle .sw{width:8px;height:8px;border-radius:50%;border:1.5px solid currentColor;background:transparent;transition:background .3s}
+  html.escuro .toggle .sw{background:currentColor}
+
+  main{max-width:var(--maxw);margin:0 auto;padding:0 clamp(14px,4vw,34px)}
+  section{padding-top:clamp(20px,3vw,30px)}
+  section:first-of-type{padding-top:clamp(104px,13vw,150px)}
+
+  .block{position:relative;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:4px;overflow:hidden}
+  .blockhead{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px clamp(16px,3vw,26px);border-bottom:1px solid var(--line);background:var(--paper-2);font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim)}
+  .blockhead .bcode{color:var(--ink-faint)}
+  .blockpad{padding:clamp(22px,3.4vw,38px) clamp(16px,3.4vw,34px)}
+  .tear{height:0;border-top:1.5px dashed var(--line);margin:clamp(18px,2.5vw,26px) 0;position:relative}
+  .tear::before,.tear::after{content:"";position:absolute;top:-7px;width:14px;height:14px;border-radius:50%;background:var(--paper-3);border:1px solid var(--line)}
+  .tear::before{left:-7px} .tear::after{right:-7px}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mark);margin-bottom:14px}
+  .eyebrow::before{content:"";width:22px;height:1.5px;background:var(--mark)}
+  h2.head{font-family:var(--display);font-weight:600;font-size:clamp(1.6rem,3.4vw,2.5rem);line-height:1.08;letter-spacing:-.02em;max-width:24ch}
+  h2.head em{font-style:italic;color:var(--mark)}
+  .lead{color:var(--ink-dim);font-size:clamp(.98rem,1.3vw,1.08rem);max-width:64ch;margin-top:12px}
+
+  .rid-title{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-bottom:14px;border-bottom:1px solid var(--line)}
+  .rid-title .rid-co{font-family:var(--display);font-weight:600;font-size:1.35rem;display:block;letter-spacing:-.01em}
+  .rid-title .rid-doc{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-top:4px;display:block}
+  .rid-title .rid-cod{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);border:1px solid var(--line);padding:5px 9px;border-radius:5px}
+  .rid-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:5px;overflow:hidden;margin-top:16px}
+  .rid-cell{padding:11px 14px;border-right:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .rid-cell:nth-child(3n){border-right:none}
+  .rid-cell small{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-bottom:4px}
+  .rid-cell b{font-size:.92rem;font-weight:600;color:var(--ink)}
+  @media(max-width:620px){.rid-grid{grid-template-columns:1fr 1fr}.rid-cell:nth-child(3n){border-right:1px solid var(--line-soft)}.rid-cell:nth-child(2n){border-right:none}}
+
+  .hero-pitch{margin-top:26px}
+  .hero-pitch h1{font-family:var(--display);font-weight:600;font-size:clamp(1.9rem,4.8vw,3.2rem);line-height:1.04;letter-spacing:-.025em;max-width:20ch}
+  .hero-pitch h1 em{font-style:italic;color:var(--mark)}
+  .hero-lead{margin-top:20px;max-width:66ch;font-size:clamp(1.02rem,1.5vw,1.16rem);color:var(--ink-dim)}
+  .hero-lead strong{color:var(--ink);font-weight:600}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-size:.94rem;font-weight:600;padding:13px 21px;border-radius:9px;transition:transform .2s,background .2s,border-color .2s;cursor:pointer;font-family:var(--sans)}
+  .btn-primary{background:var(--ink);color:var(--paper);border:1.5px solid var(--ink)}
+  .btn-primary:hover{transform:translateY(-2px);border-color:var(--mark);background:var(--mark);color:#FFF6F2}
+  .btn-ghost{border:1.5px solid var(--line-2);color:var(--ink);background:transparent}
+  .btn-ghost:hover{transform:translateY(-2px);border-color:var(--mark)}
+
+  /* ===== mapeamento vaga -> experiência ===== */
+  .note{font-size:.9rem;color:var(--ink-dim);max-width:60ch;margin-top:14px;padding-left:13px;border-left:2px solid var(--line-2)}
+  .map{border:1px solid var(--line);border-radius:5px;overflow:hidden;margin-top:24px}
+  .map-h{display:grid;grid-template-columns:42px 1fr 1.6fr;gap:14px;padding:10px clamp(14px,2.4vw,20px);background:var(--paper-2);border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+  .map-r{display:grid;grid-template-columns:42px 1fr 1.6fr;gap:14px;padding:16px clamp(14px,2.4vw,20px);border-top:1px solid var(--line-soft);align-items:start;transition:background .2s}
+  .map-r:first-of-type{border-top:none}
+  .map-r:hover{background:var(--paper-2)}
+  .map-r .n{font-family:var(--mono);font-weight:500;font-size:.78rem;color:var(--ink-faint);padding-top:2px}
+  .map-r .q{font-family:var(--display);font-weight:600;font-size:1.02rem;color:var(--ink);letter-spacing:-.01em;line-height:1.2}
+  .map-r .a{color:var(--ink-dim);font-size:.92rem}
+  .map-r .a b{color:var(--ink);font-weight:600}
+  .map-r .a .real{color:var(--accent);font-weight:600}
+  @media(max-width:680px){
+    .map-h{display:none}
+    .map-r{grid-template-columns:auto 1fr;gap:6px 12px}
+    .map-r .a{grid-column:1/-1}
+  }
+
+  /* ===== sistemas ===== */
+  .sys-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:780px){.sys-grid{grid-template-columns:1fr}}
+  .sys{border:1px solid var(--line-soft);border-radius:6px;padding:clamp(20px,2.6vw,28px);background:var(--paper);transition:transform .25s,border-color .25s}
+  .sys:hover{transform:translateY(-3px);border-color:var(--mark)}
+  .sys-tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  .sys h3{font-family:var(--display);font-weight:600;font-size:1.5rem;letter-spacing:-.02em;margin:8px 0 9px}
+  .sys>p{color:var(--ink-dim);font-size:.96rem;max-width:46ch}
+  .sys ul{list-style:none;margin:16px 0 0}
+  .sys li{display:flex;gap:10px;align-items:baseline;padding:8px 0;border-top:1px dashed var(--line-soft);color:var(--ink-dim);font-size:.92rem}
+  .sys li:first-child{border-top:none}
+  .sys li::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--mark);flex:none;transform:translateY(5px)}
+  .sys li b{color:var(--ink);font-weight:600}
+  .sys-impl{margin-top:16px;padding-top:14px;border-top:1px solid var(--line-soft);font-size:.86rem;color:var(--ink-dim)}
+  .sys-impl span{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:5px}
+
+  /* ===== base técnica ===== */
+  .base-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:5px;overflow:hidden;margin-top:8px}
+  .base{padding:16px 16px;border-right:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .base:nth-child(3n){border-right:none}
+  .base small{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-bottom:6px}
+  .base b{font-size:1rem;font-weight:600;color:var(--ink)}
+  @media(max-width:620px){.base-grid{grid-template-columns:1fr 1fr}.base:nth-child(3n){border-right:1px solid var(--line-soft)}.base:nth-child(2n){border-right:none}}
+
+  /* ===== 90 dias ===== */
+  .phases{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line);border-radius:5px;overflow:hidden;margin-top:8px}
+  @media(max-width:780px){.phases{grid-template-columns:1fr 1fr}}
+  @media(max-width:460px){.phases{grid-template-columns:1fr}}
+  .phase{background:var(--paper);padding:20px}
+  .phase .pn{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;color:var(--mark)}
+  .phase h4{font-family:var(--display);font-weight:600;font-size:1.04rem;margin:8px 0 6px}
+  .phase p{font-size:.86rem;color:var(--ink-dim)}
+
+  /* ===== fechamento ===== */
+  .declara{display:grid;grid-template-columns:1.3fr .9fr;gap:30px;align-items:end}
+  @media(max-width:760px){.declara{grid-template-columns:1fr;gap:22px}}
+  .declara p{color:var(--ink-2);font-family:var(--display);font-size:1.12rem;line-height:1.5}
+  .declara p b{color:var(--ink);font-weight:600}
+  .assina{text-align:right}
+  @media(max-width:760px){.assina{text-align:left}}
+  .assina .sig{font-family:var(--display);font-style:italic;font-weight:500;font-size:1.5rem;color:var(--ink);border-bottom:1.5px solid var(--line);padding-bottom:8px}
+  .assina small{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-top:8px}
+  .about-link{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:.92rem;font-weight:600;color:var(--mark);transition:gap .2s}
+  .about-link:hover{gap:12px}
+
+  footer{max-width:var(--maxw);margin:0 auto;padding:34px clamp(14px,4vw,34px) 56px}
+  .foot-note{font-family:var(--mono);font-size:.64rem;letter-spacing:.04em;color:var(--ink-faint);line-height:1.8;max-width:84ch;border-top:1px dashed var(--line);padding-top:16px}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .seq{opacity:0;transform:translateY(18px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.32s}
+  @media(prefers-reduced-motion:reduce){.reveal,.seq{opacity:1!important;transform:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<header>
+  <div class="brand"><b>Tayna Azevedo de Almeida</b><span>Folha de Pagamento</span></div>
+  <div class="h-right">
+    <nav>
+      <a href="#fit">Fit com a vaga</a>
+      <a href="#sistemas">Sistemas</a>
+      <a href="#base">Base técnica</a>
+    </nav>
+    <button class="toggle" id="themeBtn" aria-label="Alternar tema"><span class="sw"></span><span id="themeTxt">Escuro</span></button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== APRESENTAÇÃO ===== -->
+  <section id="topo">
+    <div class="block">
+      <div class="blockhead"><span>Apresentação</span><span class="bcode">São Paulo · jun 2026</span></div>
+      <div class="blockpad">
+        <div class="rid-title">
+          <div>
+            <span class="rid-co">Tayna Azevedo de Almeida</span>
+            <span class="rid-doc">Candidatura · Gerente de Folha de Pagamento Júnior</span>
+          </div>
+          <span class="rid-cod">jun 2026</span>
+        </div>
+        <div class="rid-grid">
+          <div class="rid-cell"><small>Função pretendida</small><b>Gerente de Folha de Pagamento Jr.</b></div>
+          <div class="rid-cell"><small>Área</small><b>Folha de Pagamento &amp; RH</b></div>
+          <div class="rid-cell"><small>Local</small><b>São Paulo / SP</b></div>
+          <div class="rid-cell"><small>Início</small><b>Imediato</b></div>
+          <div class="rid-cell"><small>Formação</small><b>Tecnólogo em Gestão de Pessoas</b></div>
+          <div class="rid-cell"><small>Disponibilidade</small><b>Presencial / híbrido</b></div>
+        </div>
+
+        <div class="hero-pitch">
+          <h1 class="seq d1">O que eu já fiz e construí em folha de pagamento — e como isso <em>conversa com a vaga</em>.</h1>
+          <p class="hero-lead seq d2">
+            Sou Tayna. Tenho <strong>formação em Gestão de Pessoas</strong> e já <strong>fechei uma folha de pagamento junto à contabilidade</strong>.
+            Para entender a operação por dentro, construí dois protótipos: a <strong>Norma</strong>, que calcula a folha e fecha o eSocial, e o
+            <strong>Integra Serviços</strong>, que conecta o ERP e organiza os dados para conciliação e relatórios. Esta página reúne esse trabalho
+            e mostra onde ele encontra a vaga.
+          </p>
+          <div class="cta-row seq d3">
+            <a class="btn btn-primary" href="#sistemas">Ver os sistemas</a>
+            <a class="btn btn-ghost" href="#fit">Como me encaixo na vaga</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tear"></div>
+
+  <!-- ===== FIT COM A VAGA ===== -->
+  <section id="fit">
+    <div class="block">
+      <div class="blockhead"><span>A vaga, ponto a ponto</span><span class="bcode">Requisitos</span></div>
+      <div class="blockpad">
+        <div class="eyebrow reveal">Onde a experiência encontra a vaga</div>
+        <h2 class="head reveal">Cada exigência do anúncio, e o que eu trago para ela.</h2>
+        <p class="note reveal">Onde escrevo <span style="color:var(--accent);font-weight:600">já fiz / conciliei</span>, é experiência real. Onde falo da Norma ou do Integra Serviços, é protótipo que construí para estudo — não produto em produção.</p>
+
+        <div class="map reveal">
+          <div class="map-h"><span></span><span>O que a vaga pede</span><span>O que eu trago</span></div>
+          <div class="map-r"><span class="n">01</span><span class="q">Cronograma da folha (salários, encargos, férias, 13º, rescisões)</span><span class="a"><span class="real">Já fechei uma folha</span> junto à contabilidade, então conheço o ciclo na prática. Na Norma, modelei o ciclo completo: cálculo de INSS, IRRF e FGTS, férias, 13º e rescisões.</span></div>
+          <div class="map-r"><span class="n">02</span><span class="q">eSocial no prazo, sem multas</span><span class="a">A Norma gera os eventos do eSocial pelas <b>APIs oficiais</b> e valida cada um antes do envio, para reduzir rejeição e passivo.</span></div>
+          <div class="map-r"><span class="n">03</span><span class="q">Interpretar Convenções Coletivas (CCTs)</span><span class="a">Construí um assistente de CLT em que cada regra fica <b>consultável e com a fonte citada</b> — pensado para lidar com a variação entre convenções.</span></div>
+          <div class="map-r"><span class="n">04</span><span class="q">Métricas para a diretoria (headcount, horas extras, custo por setor, absenteísmo)</span><span class="a">No Integra Serviços, montei painéis que puxam dados do ERP e mostram <b>custo de folha por setor</b>, headcount, horas extras e absenteísmo.</span></div>
+          <div class="map-r"><span class="n">05</span><span class="q">Conciliação contábil e auditoria (SOX)</span><span class="a"><span class="real">Já conciliei a folha</span> com a contabilidade. No Integra, deixei a camada de dados padronizada, com credenciais protegidas e registro do que foi feito.</span></div>
+          <div class="map-r"><span class="n">06</span><span class="q">Homologar melhorias e tabelas fiscais no ERP</span><span class="a">Testo cada mudança em <b>ambiente simulado antes da produção</b>, para atualizar a tabela fiscal sem arriscar o ERP.</span></div>
+          <div class="map-r"><span class="n">07</span><span class="q">Resiliência e gestão de crise</span><span class="a">Fechar folha tem prazo fixo e pouca margem para erro — já vivi isso ao lado da contabilidade. E como construo meus próprios sistemas, estou acostumada a investigar e corrigir o que quebra.</span></div>
+          <div class="map-r"><span class="n">08</span><span class="q">Liderança e comunicação</span><span class="a">Conduzi o ciclo de folha de ponta a ponta, em coordenação com a contabilidade. E boa parte do que construí serve para comunicar com clareza: o assistente de CLT cita a fonte de cada regra, e os painéis mostram o custo de um jeito que a diretoria entende sem intermediário.</span></div>
+          <div class="map-r"><span class="n">09</span><span class="q">Visão analítica e atenção aos detalhes</span><span class="a">Em folha, um campo errado vira multa ou pagamento incorreto. <span class="real">Conciliei a folha ao centavo</span> com a contabilidade e levei essa exigência para dentro da Norma, como checagem automática.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tear"></div>
+
+  <!-- ===== SISTEMAS ===== -->
+  <section id="sistemas">
+    <div class="block">
+      <div class="blockhead"><span>Os dois sistemas que construí</span><span class="bcode">Norma · Integra</span></div>
+      <div class="blockpad">
+        <div class="eyebrow reveal">O que eu fiz</div>
+        <h2 class="head reveal">Dois protótipos autorais, do cálculo à conciliação.</h2>
+        <p class="lead reveal">Construí os dois para entender a folha na prática. São protótipos de estudo e demonstração, não produtos em produção.</p>
+        <div class="sys-grid" style="margin-top:26px">
+          <article class="sys reveal">
+            <div class="sys-tag">Sistema 1 — cálculo e eSocial</div>
+            <h3>Norma</h3>
+            <p>Calcula a folha e fecha o eSocial. Pensei a ferramenta a partir da operação de RH, por dentro.</p>
+            <ul>
+              <li>Cálculo de <b>INSS, IRRF e FGTS</b></li>
+              <li><b>eSocial</b> pelas APIs oficiais, com validação antes do envio</li>
+              <li>Assistente de <b>CLT</b> com a fonte de cada regra</li>
+              <li>Análises de <b>headcount, rotatividade e absenteísmo</b></li>
+            </ul>
+            <p class="sys-impl"><span>Como funciona</span>Roda primeiro em um setor, compara o cálculo com a folha atual e só então expande. O eSocial é validado antes de enviar.</p>
+          </article>
+          <article class="sys reveal">
+            <div class="sys-tag">Sistema 2 — integração e dados</div>
+            <h3>Integra Serviços</h3>
+            <p>Conecta o ERP que a empresa já usa e organiza os dados para conciliação e relatórios.</p>
+            <ul>
+              <li>Conector para <b>TOTVS Protheus + RM</b> (o ERP citado na vaga)</li>
+              <li><b>Custo de folha por setor</b>, headcount e horas extras</li>
+              <li><b>Credenciais protegidas</b> e registro do que foi feito</li>
+              <li>Homologação testada antes da produção</li>
+            </ul>
+            <p class="sys-impl"><span>Como funciona</span>Conecta na instância do cliente, testa em ambiente simulado e só então importa — a tabela fiscal é atualizada sem risco ao ERP.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tear"></div>
+
+  <!-- ===== BASE TÉCNICA ===== -->
+  <section id="base">
+    <div class="block">
+      <div class="blockhead"><span>Base técnica e formação</span><span class="bcode">Ferramentas</span></div>
+      <div class="blockpad">
+        <div class="eyebrow reveal">Formação e ferramentas</div>
+        <div class="base-grid reveal">
+          <div class="base"><small>Legislação</small><b>CLT e eSocial</b></div>
+          <div class="base"><small>Formação</small><b>Tecnólogo em Gestão de Pessoas</b></div>
+          <div class="base"><small>Sistemas</small><b>TOTVS Protheus + RM</b></div>
+          <div class="base"><small>Dados</small><b>Excel avançado e SQL</b></div>
+          <div class="base"><small>Controle</small><b>Conciliação e SOX</b></div>
+          <div class="base"><small>Analytics</small><b>People Analytics</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tear"></div>
+
+  <!-- ===== PRIMEIROS 90 DIAS ===== -->
+  <section id="inicio">
+    <div class="block">
+      <div class="blockhead"><span>Como eu começaria</span><span class="bcode">Primeiros 90 dias</span></div>
+      <div class="blockpad">
+        <div class="eyebrow reveal">Primeiros 90 dias</div>
+        <h2 class="head reveal">Entender o que já existe, antes de mudar.</h2>
+        <p class="lead reveal">Não chego trocando tudo. Começo conhecendo a operação atual e os sistemas que já estão no lugar.</p>
+        <div class="phases reveal">
+          <div class="phase"><div class="pn">0–30 dias</div><h4>Diagnóstico</h4><p>Mapear o cronograma, os sistemas em uso (TOTVS, SAP, ADP), os pontos de rejeição no eSocial e as convenções aplicáveis.</p></div>
+          <div class="phase"><div class="pn">30–60 dias</div><h4>Conferência</h4><p>Padronizar a conferência por setor e a conciliação com a contabilidade, com registro do que foi feito.</p></div>
+          <div class="phase"><div class="pn">60–90 dias</div><h4>Visibilidade</h4><p>Ligar o ERP a painéis de custo por setor, horas extras e absenteísmo para a diretoria.</p></div>
+          <div class="phase"><div class="pn">contínuo</div><h4>Estabilidade</h4><p>Toda mudança no ERP testada antes da produção; cronograma estável e eSocial no prazo.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tear"></div>
+
+  <!-- ===== FECHAMENTO ===== -->
+  <section id="fim">
+    <div class="block">
+      <div class="blockhead"><span>Em resumo</span><span class="bcode">Contato</span></div>
+      <div class="blockpad">
+        <div class="declara reveal">
+          <div>
+            <p>Tenho formação em Gestão de Pessoas, já <b>fechei uma folha de pagamento</b> junto à contabilidade e construí os dois sistemas desta página para entender a operação por dentro. É o que eu trago para a vaga de Gerente de Folha de Pagamento Júnior — e onde eu gostaria de continuar aprendendo e crescendo.</p>
+            <a class="about-link" href="https://taynaazevedodealmeida-dev.github.io/portfolio" target="_blank" rel="noopener">Portfólio completo
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          </div>
+          <div class="assina">
+            <div class="sig">Tayna Azevedo de Almeida</div>
+            <small>São Paulo · junho de 2026</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p class="foot-note">Norma e Integra Serviços são protótipos autorais, feitos para estudo e demonstração — não são produtos em produção. Dados pessoais sensíveis (CPF, PIS, CTPS) foram omitidos de propósito.</p>
+</footer>
+
+<script>
+  /* tema claro (padrão) / escuro */
+  const root=document.documentElement, themeBtn=document.getElementById('themeBtn'), themeTxt=document.getElementById('themeTxt');
+  themeBtn.addEventListener('click', ()=>{ themeTxt.textContent = root.classList.toggle('escuro') ? 'Claro' : 'Escuro'; });
+
+  const semMov = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const cab = document.querySelector('header');
+
+  /* navegação por âncora */
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      const id=a.getAttribute('href'); if(!id||id.length<2) return;
+      const alvo=document.querySelector(id); if(!alvo) return;
+      e.preventDefault();
+      const y = alvo.getBoundingClientRect().top + window.pageYOffset - ((cab?cab.offsetHeight:0)+16);
+      window.scrollTo({ top:y, behavior: semMov ? 'auto':'smooth' });
+    });
+  });
+
+  /* barra de progresso de leitura */
+  const bar=document.getElementById('progress');
+  function pr(){ const h=document.documentElement, max=h.scrollHeight-h.clientHeight; bar.style.width=(max>0?(h.scrollTop/max)*100:0)+'%'; }
+  window.addEventListener('scroll', pr, {passive:true}); window.addEventListener('resize', pr); pr();
+
+  /* reveal ao rolar */
+  const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}})},{threshold:0.12, rootMargin:'0px 0px -7% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
